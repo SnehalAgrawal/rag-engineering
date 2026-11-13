@@ -1,0 +1,18 @@
+{
+  "name": "production-rag-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "The support assistant from 01-basic-rag as a production-shaped pipeline: versioned index, request deadline, relevance gate, fault injection, and traces. Companion to Article #14 on snehalagrawal.com.",
+  "scripts": {
+    "index": "node index.js",
+    "ask": "node ask.js",
+    "evaluate": "node evaluate.js",
+    "faults": "node faults.js",
+    "update": "node update.js",
+    "report": "node report.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

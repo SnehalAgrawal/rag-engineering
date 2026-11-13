@@ -1,0 +1,255 @@
+{
+  "_comment": "The same 50-article help center as 01-basic-rag (copied so this demo is self-contained). The product and every fact are made up.",
+  "articles": [
+    {
+      "id": "getting-started",
+      "title": "Getting started",
+      "text": "After you sign up, you land on an empty dashboard. Create your first project with New Project in the top-right corner and give it a name. Projects hold tasks, files, and comments, and each project has its own members. Invite teammates from the project's Members tab, or from Settings > Members to add them to the whole organization. Every new organization starts with a 14-day free trial of the Pro plan, and no credit card is required. Most teams begin by importing their existing tasks, creating a few projects, and connecting Slack so that updates appear where the team already talks. The checklist on the dashboard walks you through these steps and disappears once you have completed them."
+    },
+    {
+      "id": "plans",
+      "title": "Plans and pricing",
+      "text": "The Basic plan costs $10 per month and includes 3 projects. The Pro plan costs $25 per month and includes unlimited projects."
+    },
+    {
+      "id": "free-trial",
+      "title": "The free trial",
+      "text": "The Pro trial lasts 14 days and includes every Pro feature, including single sign-on, larger file uploads, and higher API limits. Each organization can start one trial; creating a second organization to extend a trial is not allowed. To upgrade before the trial ends, go to Settings > Billing > Change plan and add a payment method. If you do nothing, the organization moves to the Basic plan when the trial ends. Nothing is deleted, but projects beyond the Basic limit of 3 become read-only until you upgrade or archive them, and Pro-only settings such as single sign-on are switched off."
+    },
+    {
+      "id": "change-plan",
+      "title": "Upgrading or downgrading",
+      "text": "Change your plan from Settings > Billing > Change plan. Upgrades take effect immediately, and you are charged a prorated amount for the rest of the current billing period. Downgrades take effect at the start of the next billing period, so you keep Pro features until then. Before you can downgrade to Basic, archive projects until no more than 3 are active, and remove members until no more than 5 remain. Only the Owner can change the plan. If you are on an annual plan, a downgrade takes effect when the annual period ends."
+    },
+    {
+      "id": "annual-billing",
+      "title": "Annual billing",
+      "text": "Both plans can be billed annually. An annual plan costs the same as 10 months of monthly billing: $100 per year for Basic and $250 per year for Pro. Switch under Settings > Billing > Billing frequency. When you switch from monthly to annual billing, the unused part of your current month is credited against the first annual payment. Annual plans renew automatically on the anniversary of the purchase date, and the Owner receives a reminder email 14 days before each renewal."
+    },
+    {
+      "id": "payment-methods",
+      "title": "Payment methods",
+      "text": "We accept Visa, Mastercard, and American Express credit cards. Organizations on an annual plan can also pay by bank transfer against an invoice; ask for this through live chat before your first annual payment. We do not accept PayPal or cryptocurrency. To change the card on file, go to Settings > Billing > Payment method. The new card is used for the next payment, and any payment that is currently overdue is retried on the new card straight away."
+    },
+    {
+      "id": "invoices",
+      "title": "Invoices and receipts",
+      "text": "An invoice is emailed to the account owner after each payment, and every invoice is available under Settings > Billing > Invoices, where you can download it as a PDF. To add a company name, address, or VAT number to future invoices, edit Settings > Billing > Invoice details. Changes apply to invoices issued after you save them. Past invoices can't be edited; email billing@example.com if one needs to be reissued with corrected details. To send invoices to someone other than the Owner, such as your finance team, add their address under Invoice details as a billing contact."
+    },
+    {
+      "id": "billing",
+      "title": "Billing issues",
+      "text": "Billing issues can be resolved by contacting our accounting department at billing@example.com."
+    },
+    {
+      "id": "failed-payments",
+      "title": "Failed payments",
+      "text": "If a payment fails, we retry the card 3 times over 7 days and email the account owner after each attempt. Common causes are an expired card, insufficient funds, or a bank blocking the payment as unusual. If every retry fails, the organization becomes read-only until the payment method is updated under Settings > Billing > Payment method. While an organization is read-only, members can sign in and view everything, but nobody can create or edit tasks. No data is deleted while an organization is read-only."
+    },
+    {
+      "id": "refunds",
+      "title": "Refunds",
+      "text": "Customers can request a refund within 30 days of purchase. Approved refunds are returned to the original payment method."
+    },
+    {
+      "id": "cancel",
+      "title": "Cancelling your subscription",
+      "text": "To cancel your subscription, go to Settings > Billing > Cancel. Your plan stays active until the end of the current billing period."
+    },
+    {
+      "id": "data-retention",
+      "title": "What happens to your data after cancelling",
+      "text": "After your plan ends, your data is kept for 90 days. During that time you can still sign in, export your data, and reactivate your subscription from Settings > Billing, and everything will be exactly as you left it. Members can sign in during this period but can't create or edit anything. After 90 days, all projects, tasks, and files are permanently deleted, and they can't be recovered. If you want your data deleted sooner, delete the organization instead of waiting."
+    },
+    {
+      "id": "delete-organization",
+      "title": "Deleting your organization",
+      "text": "The account owner can delete the organization from Settings > Organization > Delete organization. You will be asked to type the organization's name to confirm. Deletion is permanent and is completed within 24 hours, including all projects, tasks, files, and members' access. An active subscription is cancelled automatically when the organization is deleted. Backups that contain the organization's data expire on their normal schedule. If you only want to stop paying, cancel the subscription instead; your data will then be kept for a while in case you come back."
+    },
+    {
+      "id": "password",
+      "title": "Resetting your password",
+      "text": "If you forgot your password, click 'Forgot Password' on the login page. The reset link expires after 1 hour."
+    },
+    {
+      "id": "two-factor",
+      "title": "Two-factor authentication",
+      "text": "Two-factor authentication can be enabled under Settings > Security. We support authenticator apps. SMS codes are not supported."
+    },
+    {
+      "id": "sso",
+      "title": "Single sign-on (SSO)",
+      "text": "Pro organizations can enable single sign-on with any SAML 2.0 identity provider, such as Okta or Microsoft Entra ID. Configure it under Settings > Security > SSO: enter your identity provider's metadata URL, then test the connection with your own account before enforcing it. When SSO is enforced, members sign in through the identity provider, and password sign-in is turned off for them. The Owner can always sign in with a password, so a misconfigured identity provider can't lock everyone out. SSO is not available on the Basic plan."
+    },
+    {
+      "id": "change-email",
+      "title": "Changing your email address",
+      "text": "Change your sign-in email under Profile > Account > Email. We send a confirmation link to the new address, and the change takes effect only after you click it. The confirmation link expires after 24 hours; if it expires, start the change again. Until you confirm, you keep signing in with your old address. If your organization uses single sign-on, your email address is managed by your identity provider and can't be changed here."
+    },
+    {
+      "id": "locked-account",
+      "title": "Locked accounts",
+      "text": "After 10 failed sign-in attempts in a row, an account is locked for 30 minutes. You can wait, or reset your password to unlock it immediately. Support can't unlock accounts manually. If you sign in with SSO, contact your organization's administrator instead, because the lock is applied by your identity provider."
+    },
+    {
+      "id": "invite-members",
+      "title": "Inviting teammates",
+      "text": "Invite teammates from Settings > Members > Invite. Enter one or more email addresses and choose a role. Invitations are sent by email and expire after 7 days; you can resend an expired invitation from the same page. The Basic plan includes up to 5 members; the Pro plan has no member limit. Guests can be invited to individual projects and don't count toward the member limit."
+    },
+    {
+      "id": "guests",
+      "title": "Guests",
+      "text": "Guests are people outside your organization, such as clients or contractors, whom you invite to a single project. Invite a guest from the project's Members tab. Guests can view the project, comment, and edit tasks assigned to them, but they can't create projects, see other projects, or invite anyone. Guests don't count toward your plan's member limit. To give a guest access to another project, invite them to that project as well."
+    },
+    {
+      "id": "roles",
+      "title": "Roles and permissions",
+      "text": "Every member has one of three roles: Owner, Admin, or Member. The Owner manages billing and is the only person who can delete the organization; each organization has exactly one Owner. Admins can invite and remove members and change project settings. Members can create and edit work in the projects they belong to. Change roles under Settings > Members."
+    },
+    {
+      "id": "transfer-ownership",
+      "title": "Transferring ownership",
+      "text": "Only the current Owner can transfer ownership, from Settings > Organization > Transfer ownership. The new Owner must already be an Admin; promote them first if they aren't. After the transfer, the previous Owner becomes an Admin, and billing emails go to the new Owner. If the Owner has left your company and can't transfer ownership, contact support through live chat; we will ask for proof that you are authorized to act for the company."
+    },
+    {
+      "id": "remove-member",
+      "title": "Removing a member",
+      "text": "Admins can remove a member from Settings > Members. The member loses access immediately and is signed out of every device. The work they created stays in its projects, their comments keep their name, and tasks assigned to them become unassigned. Removing a member frees a seat on the Basic plan straight away. To give the person access again later, invite them again."
+    },
+    {
+      "id": "tasks",
+      "title": "Creating and organizing tasks",
+      "text": "Create a task with the New Task button in any project or by pressing N. A task has a title, an optional description, an assignee, a due date, a status, and labels. The default statuses are To do, In progress, and Done; Admins can rename them or add up to 10 custom statuses per project. Drag tasks between columns on the board view, or switch to the list view to sort and filter them. Subtasks can be added to any task, and a task is shown as complete only when all its subtasks are done."
+    },
+    {
+      "id": "due-dates",
+      "title": "Due dates and reminders",
+      "text": "Set a due date on any task, with an optional time. Due dates use the time zone set in your profile. The assignee gets a reminder email the morning a task is due, and overdue tasks are highlighted in red on the board. You can add your own reminder to a task, for example two days before the due date, from the task's bell icon. Reminders are only sent to the person who created them."
+    },
+    {
+      "id": "recurring-tasks",
+      "title": "Recurring tasks",
+      "text": "Make a task repeat from its due date menu with Repeat. A task can repeat daily, weekly, monthly, or on a custom schedule such as every second Tuesday. When you complete a recurring task, the next one is created automatically with the next due date, the same assignee, and the same description. Comments and attachments are not copied to the next task. To stop a task repeating, open the Repeat menu and choose Never."
+    },
+    {
+      "id": "comments",
+      "title": "Comments and mentions",
+      "text": "Every task has a comment thread. Mention a teammate with @ followed by their name; they get a notification and can reply from the email. You can edit or delete your own comments for 24 hours after posting them. Comments support basic formatting, links, and file attachments, and guests can comment on tasks in projects they have access to."
+    },
+    {
+      "id": "search",
+      "title": "Searching",
+      "text": "Press / to open search from anywhere. Search covers task titles, descriptions, comments, and the names of attached files across every project you can access. Use filters to narrow the results by project, assignee, status, label, or due date. Text inside attached files, such as the content of a PDF, is not searched. Archived projects are included only if you turn on Include archived."
+    },
+    {
+      "id": "labels",
+      "title": "Labels",
+      "text": "Labels are colored tags you can add to tasks to group them across statuses, for example Bug, Design, or Urgent. Create labels from any task's label menu. Labels belong to a project, so each project has its own set. Filter the board or the list view by one or more labels to see only the matching tasks."
+    },
+    {
+      "id": "templates",
+      "title": "Project templates",
+      "text": "Save any project as a template from its Settings tab with Save as template. A template keeps the project's statuses, labels, and tasks, but not its members, comments, or attachments. Create a new project from a template with New Project > From template. Templates are shared with everyone in the organization, and Admins can delete them."
+    },
+    {
+      "id": "reports",
+      "title": "Reports",
+      "text": "The Reports page shows how many tasks were created and completed each week, how long tasks stay in each status, and which tasks are overdue. Reports are available on the Pro plan. Choose a project and a date range at the top of the page, and download any report as a CSV file. Reports are updated every hour."
+    },
+    {
+      "id": "archive-projects",
+      "title": "Archiving projects",
+      "text": "Archive a project from its Settings tab with Archive. Archived projects are read-only, don't count toward your plan's project limit, and can be restored at any time from the Archived section of the project list. Archiving keeps everything, including comments and files, and members keep read access. Use archiving for finished work you may need later."
+    },
+    {
+      "id": "trash",
+      "title": "Trash and recovering deleted items",
+      "text": "Deleted tasks, files, and projects go to Trash, where they stay for 30 days. Restore an item from Trash in the sidebar; it returns to where it was, with its comments and attachments. Only Admins can restore a deleted project. After 30 days, items are permanently deleted and cannot be recovered, even by support. To delete something from Trash before the 30 days are up, select it and choose Delete permanently."
+    },
+    {
+      "id": "file-uploads",
+      "title": "File attachments and storage",
+      "text": "You can attach files to any task or comment by dragging them in or using the paperclip icon. The maximum file size is 100 MB on Basic and 2 GB on Pro. Each organization gets 10 GB of storage on Basic and 1 TB on Pro, and the current usage is shown under Settings > Data > Storage. When an organization reaches its storage limit, new uploads are blocked until files are deleted or the plan is upgraded. Images and PDFs open in the browser; other files are downloaded."
+    },
+    {
+      "id": "export",
+      "title": "Exporting your data",
+      "text": "You can export your data as CSV from Settings > Data > Export. Exports include all projects and are emailed to the account owner."
+    },
+    {
+      "id": "import",
+      "title": "Importing tasks",
+      "text": "Import tasks from a CSV file under Settings > Data > Import. The file needs a header row with at least a Title column; optional columns are Description, Assignee (an email address), Due date (YYYY-MM-DD), and Status. Each import is limited to 10,000 rows. You can preview the first 20 rows and map columns before anything is created, and an import can be undone for 24 hours. Direct imports from other project-management tools are not supported."
+    },
+    {
+      "id": "api-keys",
+      "title": "API keys",
+      "text": "Create API keys under Settings > Developer > API keys. A key has the same permissions as the member who created it, and it works until it is revoked. If that member is removed from the organization, their keys stop working. The API is available on both plans. Store keys in a secret manager, never commit them to code, and revoke a key immediately if it may have been exposed."
+    },
+    {
+      "id": "rate-limits",
+      "title": "API rate limits",
+      "text": "The API allows 100 requests per minute per key on Basic and 1,000 requests per minute per key on Pro. Requests over the limit receive HTTP status 429 with a Retry-After header that gives the number of seconds to wait. Every response includes X-RateLimit-Remaining, so a client can slow down before it hits the limit. Creating more keys to get around the limit is against the terms of service."
+    },
+    {
+      "id": "webhooks",
+      "title": "Webhooks",
+      "text": "Webhooks send an HTTP POST to your URL when tasks are created, updated, or completed. Configure them under Settings > Developer > Webhooks. Each request is signed with HMAC-SHA256 using your webhook secret, and the signature is sent in the X-Signature header. Your endpoint must respond with a 2xx status within 10 seconds. Failed deliveries are retried up to 5 times over 24 hours, after which the webhook is paused and the Owner is notified by email."
+    },
+    {
+      "id": "integrations",
+      "title": "Integrations",
+      "text": "We integrate with Slack, Google Drive, and GitHub. Connect them under Settings > Integrations; an Admin must approve each integration for the organization. Slack posts task updates to a channel you choose. Google Drive lets you attach Drive files to tasks without uploading copies. GitHub links a pull request to a task when the task ID appears in the branch name, and the task moves to Done when the pull request is merged."
+    },
+    {
+      "id": "notifications",
+      "title": "Email notifications",
+      "text": "By default you get an email when a task is assigned to you, when someone mentions you in a comment, and when a task you follow is completed. Change this under Profile > Notifications, where you can also switch to a daily summary sent at 8:00 in your time zone. Admins can't change another member's notification settings."
+    },
+    {
+      "id": "mobile-apps",
+      "title": "Mobile apps",
+      "text": "Our iOS and Android apps are free on both plans. They support tasks, comments, and notifications. Project settings, billing, and imports are only available on the web."
+    },
+    {
+      "id": "offline",
+      "title": "Working offline",
+      "text": "The web app needs an internet connection. The mobile apps keep your recent projects on the device, so you can read and edit tasks offline, and changes sync when you reconnect. If the same task was edited elsewhere in the meantime, the most recent change wins, and the earlier version is kept in the task's history."
+    },
+    {
+      "id": "browsers",
+      "title": "Supported browsers",
+      "text": "We support the latest two versions of Chrome, Firefox, Safari, and Edge. Internet Explorer is not supported. If the app doesn't load, clear your browser cache and turn off extensions, then try a private window. If it still doesn't load, check the status page before contacting support."
+    },
+    {
+      "id": "profile",
+      "title": "Your profile and time zone",
+      "text": "Edit your name, photo, language, and time zone under Profile > Account. The time zone is used for due dates, reminders, and the daily summary email. The app is available in English, German, French, and Spanish. Your profile photo and name are visible to everyone in your organization and to guests in projects you share with them."
+    },
+    {
+      "id": "data-location",
+      "title": "Where your data is stored",
+      "text": "Data is stored in the European Union (Frankfurt) or the United States (Virginia). You choose the region when you create the organization, and it can't be changed later. To use a different region, create a new organization in that region and move your data with an export and an import. Backups are kept in the same region for 35 days."
+    },
+    {
+      "id": "security",
+      "title": "Security and encryption",
+      "text": "Data is encrypted in transit with TLS 1.2 or later and at rest with AES-256. An independent auditor reviews our security controls every year, and Pro customers can request the latest report through live chat. Our staff can access customer data only to resolve a support request, with your permission, and every access is logged."
+    },
+    {
+      "id": "status",
+      "title": "Service status and maintenance",
+      "text": "Check status.example.com for current incidents and scheduled maintenance. You can subscribe there to email updates. Scheduled maintenance is announced at least 48 hours in advance and takes place on Sundays between 02:00 and 04:00 UTC. During maintenance the app may be read-only for a few minutes."
+    },
+    {
+      "id": "shortcuts",
+      "title": "Keyboard shortcuts",
+      "text": "Press ? anywhere in the app to see every keyboard shortcut. N creates a task, / opens search, and G followed by P opens your projects. Shortcuts are turned off while you are typing in a text field. They can't be customized."
+    },
+    {
+      "id": "support-hours",
+      "title": "Contacting support",
+      "text": "Our support team is available 24/7 via live chat."
+    }
+  ]
+}

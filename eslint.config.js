@@ -4,7 +4,7 @@ import js from "@eslint/js";
 import globals from "globals";
 
 export default [
-  { ignores: ["**/node_modules/**"] },
+  { ignores: ["**/node_modules/**", "**/.venv/**"] }, // .venv: Python virtual environments can contain JavaScript files
   js.configs.recommended,
   {
     files: ["**/*.js"],

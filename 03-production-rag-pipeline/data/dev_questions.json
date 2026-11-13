@@ -1,0 +1,717 @@
+{
+  "_comment": "Development questions, used only to choose the relevance threshold (evaluate.py, part 2); the test questions in questions.json are never used for that. 'answerable' are the training and validation questions of 02-rag-vs-fine-tuning: other wordings of help-center facts, each with the article it came from. Some cover the same facts as test questions in different words, so dev and test are related, not independent. 'not_in_docs' sound like support questions that the help center doesn't answer: 9 from 02 (source '02') and 10 written for this demo (source 'new'), checked against every article, on topics different from the 6 test questions.",
+  "answerable": [
+    {
+      "id": "d001",
+      "question": "How do I create my first project?",
+      "article": "getting-started"
+    },
+    {
+      "id": "d002",
+      "question": "Do I need a credit card to try the product?",
+      "article": "getting-started"
+    },
+    {
+      "id": "d003",
+      "question": "What should I do first after signing up?",
+      "article": "getting-started"
+    },
+    {
+      "id": "d004",
+      "question": "What does the Basic plan cost?",
+      "article": "plans"
+    },
+    {
+      "id": "d005",
+      "question": "What's the monthly price of Pro?",
+      "article": "plans"
+    },
+    {
+      "id": "d006",
+      "question": "How many projects come with the Basic plan?",
+      "article": "plans"
+    },
+    {
+      "id": "d007",
+      "question": "How many days does the Pro trial last?",
+      "article": "free-trial"
+    },
+    {
+      "id": "d008",
+      "question": "What happens when my trial ends?",
+      "article": "free-trial"
+    },
+    {
+      "id": "d009",
+      "question": "Can I start a second free trial?",
+      "article": "free-trial"
+    },
+    {
+      "id": "d010",
+      "question": "How do I upgrade to Pro?",
+      "article": "change-plan"
+    },
+    {
+      "id": "d011",
+      "question": "When does a downgrade take effect?",
+      "article": "change-plan"
+    },
+    {
+      "id": "d012",
+      "question": "What do I need to do before downgrading to Basic?",
+      "article": "change-plan"
+    },
+    {
+      "id": "d013",
+      "question": "How much is Pro if I pay yearly?",
+      "article": "annual-billing"
+    },
+    {
+      "id": "d014",
+      "question": "What does Basic cost per year?",
+      "article": "annual-billing"
+    },
+    {
+      "id": "d015",
+      "question": "Do annual plans renew automatically?",
+      "article": "annual-billing"
+    },
+    {
+      "id": "d016",
+      "question": "Which credit cards do you accept?",
+      "article": "payment-methods"
+    },
+    {
+      "id": "d017",
+      "question": "Do you accept PayPal or crypto?",
+      "article": "payment-methods"
+    },
+    {
+      "id": "d018",
+      "question": "Can we pay by bank transfer?",
+      "article": "payment-methods"
+    },
+    {
+      "id": "d019",
+      "question": "Where can I download my invoices?",
+      "article": "invoices"
+    },
+    {
+      "id": "d020",
+      "question": "How do I add our VAT number to invoices?",
+      "article": "invoices"
+    },
+    {
+      "id": "d021",
+      "question": "Can you fix the address on an old invoice?",
+      "article": "invoices"
+    },
+    {
+      "id": "d022",
+      "question": "Who do I contact about a billing problem?",
+      "article": "billing"
+    },
+    {
+      "id": "d023",
+      "question": "What's the email address for billing questions?",
+      "article": "billing"
+    },
+    {
+      "id": "d024",
+      "question": "My card was declined. What happens now?",
+      "article": "failed-payments"
+    },
+    {
+      "id": "d025",
+      "question": "Is my data deleted if a payment fails?",
+      "article": "failed-payments"
+    },
+    {
+      "id": "d026",
+      "question": "What can members do while the organization is read-only?",
+      "article": "failed-payments"
+    },
+    {
+      "id": "d027",
+      "question": "Can I get a refund?",
+      "article": "refunds"
+    },
+    {
+      "id": "d028",
+      "question": "Where does a refund go?",
+      "article": "refunds"
+    },
+    {
+      "id": "d029",
+      "question": "How do I cancel my subscription?",
+      "article": "cancel"
+    },
+    {
+      "id": "d030",
+      "question": "Does my plan stop immediately when I cancel?",
+      "article": "cancel"
+    },
+    {
+      "id": "d031",
+      "question": "What happens to my data when my plan ends?",
+      "article": "data-retention"
+    },
+    {
+      "id": "d032",
+      "question": "Can I still export after my plan ends?",
+      "article": "data-retention"
+    },
+    {
+      "id": "d033",
+      "question": "Can I reactivate my old account?",
+      "article": "data-retention"
+    },
+    {
+      "id": "d034",
+      "question": "How do I delete our organization?",
+      "article": "delete-organization"
+    },
+    {
+      "id": "d035",
+      "question": "Does deleting the organization cancel the subscription?",
+      "article": "delete-organization"
+    },
+    {
+      "id": "d036",
+      "question": "I forgot my password. What do I do?",
+      "article": "password"
+    },
+    {
+      "id": "d037",
+      "question": "When does the password reset email link expire?",
+      "article": "password"
+    },
+    {
+      "id": "d038",
+      "question": "How do I turn on two-factor authentication?",
+      "article": "two-factor"
+    },
+    {
+      "id": "d039",
+      "question": "Can I get two-factor codes by SMS?",
+      "article": "two-factor"
+    },
+    {
+      "id": "d040",
+      "question": "Which plans include SSO?",
+      "article": "sso"
+    },
+    {
+      "id": "d041",
+      "question": "Which identity providers work with your SSO?",
+      "article": "sso"
+    },
+    {
+      "id": "d042",
+      "question": "Can the Owner still use a password when SSO is enforced?",
+      "article": "sso"
+    },
+    {
+      "id": "d043",
+      "question": "How do I change my login email?",
+      "article": "change-email"
+    },
+    {
+      "id": "d044",
+      "question": "How long is the email confirmation link valid?",
+      "article": "change-email"
+    },
+    {
+      "id": "d045",
+      "question": "Why is my account locked?",
+      "article": "locked-account"
+    },
+    {
+      "id": "d046",
+      "question": "Can support unlock my account?",
+      "article": "locked-account"
+    },
+    {
+      "id": "d047",
+      "question": "What is the member limit on Basic?",
+      "article": "invite-members"
+    },
+    {
+      "id": "d048",
+      "question": "When do invitations expire?",
+      "article": "invite-members"
+    },
+    {
+      "id": "d049",
+      "question": "How do I invite a coworker?",
+      "article": "invite-members"
+    },
+    {
+      "id": "d050",
+      "question": "Can I give a client access to one project?",
+      "article": "guests"
+    },
+    {
+      "id": "d051",
+      "question": "Do guests count toward the member limit?",
+      "article": "guests"
+    },
+    {
+      "id": "d052",
+      "question": "What roles can members have?",
+      "article": "roles"
+    },
+    {
+      "id": "d053",
+      "question": "Who can delete our organization?",
+      "article": "roles"
+    },
+    {
+      "id": "d054",
+      "question": "What can Admins do?",
+      "article": "roles"
+    },
+    {
+      "id": "d055",
+      "question": "How do I make someone else the Owner?",
+      "article": "transfer-ownership"
+    },
+    {
+      "id": "d056",
+      "question": "What happens to the old Owner after a transfer?",
+      "article": "transfer-ownership"
+    },
+    {
+      "id": "d057",
+      "question": "What happens to a removed member's tasks?",
+      "article": "remove-member"
+    },
+    {
+      "id": "d058",
+      "question": "How do I remove someone from the organization?",
+      "article": "remove-member"
+    },
+    {
+      "id": "d059",
+      "question": "How do I create a task quickly?",
+      "article": "tasks"
+    },
+    {
+      "id": "d060",
+      "question": "How many custom statuses can a project have?",
+      "article": "tasks"
+    },
+    {
+      "id": "d061",
+      "question": "When is a task with subtasks shown as complete?",
+      "article": "tasks"
+    },
+    {
+      "id": "d062",
+      "question": "When do I get reminded about a task that's due?",
+      "article": "due-dates"
+    },
+    {
+      "id": "d063",
+      "question": "Which time zone do due dates use?",
+      "article": "due-dates"
+    },
+    {
+      "id": "d064",
+      "question": "Can tasks repeat every week?",
+      "article": "recurring-tasks"
+    },
+    {
+      "id": "d065",
+      "question": "Are comments copied to the next recurring task?",
+      "article": "recurring-tasks"
+    },
+    {
+      "id": "d066",
+      "question": "How do I mention a teammate?",
+      "article": "comments"
+    },
+    {
+      "id": "d067",
+      "question": "How long can I edit my comment?",
+      "article": "comments"
+    },
+    {
+      "id": "d068",
+      "question": "Does search look inside PDF attachments?",
+      "article": "search"
+    },
+    {
+      "id": "d069",
+      "question": "How do I open search?",
+      "article": "search"
+    },
+    {
+      "id": "d070",
+      "question": "Are labels shared between projects?",
+      "article": "labels"
+    },
+    {
+      "id": "d071",
+      "question": "What does a project template include?",
+      "article": "templates"
+    },
+    {
+      "id": "d072",
+      "question": "How do I save a project as a template?",
+      "article": "templates"
+    },
+    {
+      "id": "d073",
+      "question": "Is the Reports page on the Basic plan?",
+      "article": "reports"
+    },
+    {
+      "id": "d074",
+      "question": "How often are reports updated?",
+      "article": "reports"
+    },
+    {
+      "id": "d075",
+      "question": "Do archived projects count toward the project limit?",
+      "article": "archive-projects"
+    },
+    {
+      "id": "d076",
+      "question": "Can I restore an archived project?",
+      "article": "archive-projects"
+    },
+    {
+      "id": "d077",
+      "question": "I deleted a task yesterday. Can I restore it?",
+      "article": "trash"
+    },
+    {
+      "id": "d078",
+      "question": "How long do deleted items stay in Trash?",
+      "article": "trash"
+    },
+    {
+      "id": "d079",
+      "question": "Who can restore a deleted project?",
+      "article": "trash"
+    },
+    {
+      "id": "d080",
+      "question": "Can support recover items deleted more than 30 days ago?",
+      "article": "trash"
+    },
+    {
+      "id": "d081",
+      "question": "What's the maximum attachment size on Pro?",
+      "article": "file-uploads"
+    },
+    {
+      "id": "d082",
+      "question": "How much storage does Basic include?",
+      "article": "file-uploads"
+    },
+    {
+      "id": "d083",
+      "question": "What happens when we run out of storage?",
+      "article": "file-uploads"
+    },
+    {
+      "id": "d084",
+      "question": "How do I export my data?",
+      "article": "export"
+    },
+    {
+      "id": "d085",
+      "question": "Who receives the data export?",
+      "article": "export"
+    },
+    {
+      "id": "d086",
+      "question": "Can I import tasks from a CSV file?",
+      "article": "import"
+    },
+    {
+      "id": "d087",
+      "question": "How many rows can one import have?",
+      "article": "import"
+    },
+    {
+      "id": "d088",
+      "question": "Can I import directly from another project-management tool?",
+      "article": "import"
+    },
+    {
+      "id": "d089",
+      "question": "Where do I create an API key?",
+      "article": "api-keys"
+    },
+    {
+      "id": "d090",
+      "question": "Do API keys expire?",
+      "article": "api-keys"
+    },
+    {
+      "id": "d091",
+      "question": "What is the API rate limit on Pro?",
+      "article": "rate-limits"
+    },
+    {
+      "id": "d092",
+      "question": "What happens if I go over the rate limit?",
+      "article": "rate-limits"
+    },
+    {
+      "id": "d093",
+      "question": "How are webhooks signed?",
+      "article": "webhooks"
+    },
+    {
+      "id": "d094",
+      "question": "What if my webhook endpoint is down?",
+      "article": "webhooks"
+    },
+    {
+      "id": "d095",
+      "question": "Which tools do you integrate with?",
+      "article": "integrations"
+    },
+    {
+      "id": "d096",
+      "question": "How does the GitHub integration link pull requests?",
+      "article": "integrations"
+    },
+    {
+      "id": "d097",
+      "question": "Can I get one summary email per day?",
+      "article": "notifications"
+    },
+    {
+      "id": "d098",
+      "question": "Do you have an iPhone app?",
+      "article": "mobile-apps"
+    },
+    {
+      "id": "d099",
+      "question": "Can I change billing in the mobile app?",
+      "article": "mobile-apps"
+    },
+    {
+      "id": "d100",
+      "question": "Does the app work offline?",
+      "article": "offline"
+    },
+    {
+      "id": "d101",
+      "question": "Which browsers are supported?",
+      "article": "browsers"
+    },
+    {
+      "id": "d102",
+      "question": "Which languages is the app available in?",
+      "article": "profile"
+    },
+    {
+      "id": "d103",
+      "question": "Where do I change my time zone?",
+      "article": "profile"
+    },
+    {
+      "id": "d104",
+      "question": "Can I change my organization's data region?",
+      "article": "data-location"
+    },
+    {
+      "id": "d105",
+      "question": "Where is our data stored?",
+      "article": "data-location"
+    },
+    {
+      "id": "d106",
+      "question": "Is my data encrypted?",
+      "article": "security"
+    },
+    {
+      "id": "d107",
+      "question": "Can I get your security audit report?",
+      "article": "security"
+    },
+    {
+      "id": "d108",
+      "question": "When is your maintenance window?",
+      "article": "status"
+    },
+    {
+      "id": "d109",
+      "question": "Where can I check if the service is down?",
+      "article": "status"
+    },
+    {
+      "id": "d110",
+      "question": "How do I see all keyboard shortcuts?",
+      "article": "shortcuts"
+    },
+    {
+      "id": "d111",
+      "question": "When is support available?",
+      "article": "support-hours"
+    },
+    {
+      "id": "d112",
+      "question": "How do I reach support?",
+      "article": "support-hours"
+    },
+    {
+      "id": "d113",
+      "question": "What's the price of the Basic plan per month?",
+      "article": "plans"
+    },
+    {
+      "id": "d114",
+      "question": "Is there a limit on members for Pro?",
+      "article": "invite-members"
+    },
+    {
+      "id": "d115",
+      "question": "How long does Trash keep files?",
+      "article": "trash"
+    },
+    {
+      "id": "d116",
+      "question": "Where do I set up webhooks?",
+      "article": "webhooks"
+    },
+    {
+      "id": "d117",
+      "question": "Can I edit a past invoice?",
+      "article": "invoices"
+    },
+    {
+      "id": "d118",
+      "question": "Is Internet Explorer supported?",
+      "article": "browsers"
+    },
+    {
+      "id": "d119",
+      "question": "Do you support SAML?",
+      "article": "sso"
+    },
+    {
+      "id": "d120",
+      "question": "How many times do you retry a failed payment?",
+      "article": "failed-payments"
+    },
+    {
+      "id": "d121",
+      "question": "Can I pay for Basic annually?",
+      "article": "annual-billing"
+    },
+    {
+      "id": "d122",
+      "question": "Does archiving delete anything?",
+      "article": "archive-projects"
+    },
+    {
+      "id": "d123",
+      "question": "What does a 429 response from the API mean?",
+      "article": "rate-limits"
+    }
+  ],
+  "not_in_docs": [
+    {
+      "id": "o01",
+      "question": "Do you have an office I can visit?",
+      "source": "02"
+    },
+    {
+      "id": "o02",
+      "question": "Is there a referral program?",
+      "source": "02"
+    },
+    {
+      "id": "o03",
+      "question": "Can I white-label the app with my own logo?",
+      "source": "02"
+    },
+    {
+      "id": "o04",
+      "question": "Do you have Gantt charts?",
+      "source": "02"
+    },
+    {
+      "id": "o05",
+      "question": "Is there built-in time tracking?",
+      "source": "02"
+    },
+    {
+      "id": "o06",
+      "question": "Can I make video calls inside the app?",
+      "source": "02"
+    },
+    {
+      "id": "o07",
+      "question": "Is there an official Python SDK for the API?",
+      "source": "02"
+    },
+    {
+      "id": "o08",
+      "question": "Can I use my own domain for the app?",
+      "source": "02"
+    },
+    {
+      "id": "o09",
+      "question": "Can I schedule a demo call with sales?",
+      "source": "02"
+    },
+    {
+      "id": "o10",
+      "question": "Is there a dark mode?",
+      "source": "new"
+    },
+    {
+      "id": "o11",
+      "question": "Can I set dependencies between tasks?",
+      "source": "new"
+    },
+    {
+      "id": "o12",
+      "question": "Are you HIPAA compliant?",
+      "source": "new"
+    },
+    {
+      "id": "o13",
+      "question": "Do you sell gift cards?",
+      "source": "new"
+    },
+    {
+      "id": "o14",
+      "question": "Do you have a public roadmap of upcoming features?",
+      "source": "new"
+    },
+    {
+      "id": "o15",
+      "question": "Can I embed a project board in my own website?",
+      "source": "new"
+    },
+    {
+      "id": "o16",
+      "question": "Can I print a list of tasks?",
+      "source": "new"
+    },
+    {
+      "id": "o17",
+      "question": "Do you offer training sessions for new teams?",
+      "source": "new"
+    },
+    {
+      "id": "o18",
+      "question": "Can we get a custom SLA in our contract?",
+      "source": "new"
+    },
+    {
+      "id": "o19",
+      "question": "Is there a browser extension?",
+      "source": "new"
+    }
+  ]
+}

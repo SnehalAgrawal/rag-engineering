@@ -1,0 +1,28 @@
+{
+  "_comment": "Hand labels for every answer shown to a customer for an answerable test question, assigned by reading each reply against the help center. correct: the key fact is right and nothing in the reply is false. partly: the key fact is right, but the reply also says something false, contradictory, or garbled. wrong: an answer without the right key fact. The key is '<question id> | <first 16 hex digits of the SHA-256 of the reply>', so the same reply shares one label across profiles, and a changed reply shows up as unlabeled. Declines and answers to not-in-docs questions need no label.",
+  "labels": {
+    "a01 | 2ecd1681bd3b7ec3": "correct",
+    "a02 | 4013afab0edf551b": "correct",
+    "a03 | f3a8288bf3958c25": "correct",
+    "a04 | f61a7b0c1930da94": "correct",
+    "a05 | 53cc6d9cc5f2da42": "correct",
+    "a07 | 5004f705fbabbe0f": "correct",
+    "a08 | 1a60bf452448ba7f": "correct",
+    "a09 | 4d647786eab26992": "correct",
+    "a10 | 7a5f941acb00c4e4": "correct",
+    "a11 | 99dd0f3efa1c10e0": "correct",
+    "a12 | 77b92e893bbe23e1": "correct",
+    "a13 | 2416358e1ad74eeb": "correct",
+    "a14 | 40090f661afe0773": "correct",
+    "a15 | 53e83904181b0f81": "correct",
+    "a16 | cae80700fc3062b8": "wrong",
+    "a17 | 8390d77894136c43": "correct",
+    "a18 | 3ab6a567167f3a2b": "correct",
+    "a19 | 2bd269bbc4d18f16": "correct",
+    "a20 | bc4bb610e30bf9fa": "correct",
+    "a21 | 73d49e2344b257d0": "correct",
+    "a22 | 434f9310cb23dc28": "correct",
+    "a23 | aa44ae3836d438d9": "correct",
+    "a24 | cd45b4040d4ceb30": "correct"
+  }
+}
