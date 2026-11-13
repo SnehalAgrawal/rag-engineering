@@ -126,7 +126,7 @@ def report(records: list[dict]) -> None:
         return sum(1 for r in items if hand_label(r) == label)
 
     print("\n1. Hand labels: answerable questions and questions not in the help center\n")
-    print(f"{'':<18}{'test wording (24)':^36}{'training wording (24)':^38}{'not in docs (6)':^16}")
+    print(f"{'':<18}{'test wording (24)':^36}{'seen training wording (24)':^38}{'not in docs (6)':^16}")
     print(f"{'condition':<18}{'correct':>9}{'partly':>9}{'wrong':>8}{'declined':>10}"
           f"{'correct':>12}{'partly':>9}{'wrong':>8}{'declined':>10}{'declined':>14}")
     for c in CONDITIONS:

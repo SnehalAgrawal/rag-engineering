@@ -84,7 +84,7 @@ Training: validation loss 5.32 before, 1.10 after; training loss 0.26 at the las
 ```text
 1. Hand labels: answerable questions and questions not in the help center
 
-                           test wording (24)                  training wording (24)         not in docs (6)
+                           test wording (24)                seen training wording (24)      not in docs (6)
 condition           correct   partly   wrong  declined     correct   partly   wrong  declined      declined
 base                      0        2      21         1           0        1      22         1             0
 fine-tuned                7        6       9         2          14        3       6         1             3
