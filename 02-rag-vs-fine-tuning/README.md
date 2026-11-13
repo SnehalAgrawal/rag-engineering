@@ -15,8 +15,8 @@ Then five facts change in the help center (prices, a link expiry, an invitation 
 
 ## What it demonstrates
 
-1. **Fine-tuning taught behavior reliably.** Every training answer (except the declines) ended with `Source: <article title>`. The fine-tuned model ended 22 of 22 answers that way without being asked; the base model, told to do it in its prompt, did it in 1 of 17.
-2. **Fine-tuning taught facts unreliably.** On questions worded like the training data, 14 of 24 answers were correct. Worded differently (the test questions), 7 of 24 were correct, and 6 more had the right fact mixed with false or garbled statements.
+1. **Fine-tuning taught behavior reliably.** Every training answer (except the declines) ended with `Source: <article title>`. The fine-tuned model ended 22 of 22 answers that way without being asked; the base model, told to do it in its prompt, did it in 3 of 19 (counting test-wording replies that weren't declines).
+2. **Fine-tuning taught facts unreliably.** On questions worded like the training data, 14 of 24 answers were correct. Worded differently (the test questions), 7 of 24 were correct, and 6 more had the right fact mixed with false or garbled statements. The facts themselves are in the training data; what the test questions hold out is the wording.
 3. **Changed facts reach RAG, not the weights.** After 5 articles changed and only those 5 were re-embedded, base + RAG gave the new value for all 5 questions (2 with an error elsewhere in the reply). The fine-tuned model gave the old value for 3 and something else for 2.
 4. **Fine-tuning on the wrong format can hurt RAG.** The adapter was trained without retrieved articles in the prompt. With retrieval added, the fine-tuned model used the articles worse than the base model did: 6 of 24 correct against 10, and 1 of 5 changed facts against 5.
 
@@ -77,19 +77,19 @@ The numbers below come from this setup:
 | Embeddings | Ollama 0.40.16, `nomic-embed-text` (`0a109f422b47`), prefixes `search_query: ` / `search_document: ` |
 | Fine-tuning | LoRA rank 8, scale 20, all 16 layers, 5,636,096 trained parameters; batch 4, learning rate 1e-4, 100 steps (about 3.3 passes over 120 examples), seed 0, prompt masked |
 | Generation | temperature 0 (greedy), at most 200 tokens; chat template date fixed to "12 Nov 2026" |
-| Runs | trained 3 times (identical adapter: SHA-256 `f6ddfcd96f306e3f…`), evaluated twice (identical replies), 2026-11-13 |
+| Runs | trained 3 times (identical adapter: SHA-256 `f6ddfcd96f306e3f…`), evaluated twice (the same 231 replies both times), 2026-11-13 |
 
 Training: validation loss 5.32 before, 1.10 after; training loss 0.26 at the last report.
 
 ```text
 1. Hand labels: answerable questions and questions not in the help center
 
-                           test wording (24)           training wording (24)  not in docs (6)
-condition           correct   partly   wrong  declined       correct   partly       declined
-base                      0        2      21         1             0        1              0
-fine-tuned                7        6       9         2            14        3              3
-base + rag               10        6       3         5            11        8              3
-fine-tuned + rag          6        7      10         1             7        7              3
+                           test wording (24)                  training wording (24)         not in docs (6)
+condition           correct   partly   wrong  declined     correct   partly   wrong  declined      declined
+base                      0        2      21         1           0        1      22         1             0
+fine-tuned                7        6       9         2          14        3       6         1             3
+base + rag               10        6       3         5          11        8       2         3             3
+fine-tuned + rag          6        7      10         1           7        7       9         1             3
 
 2. Hand labels: 5 test questions after their facts changed in 5 articles
 
@@ -101,9 +101,9 @@ fine-tuned + rag           1                   0         1      3
 3. Checks in code: the 'Source:' line, and the key-fact pattern as a cross-check
 
 condition           source line present  names a right article  key fact (pattern)
-base                              0/24                   0/24                 5/24
+base                              0/23                   0/23                 5/24
 fine-tuned                       22/22                  17/22                14/24
-base + rag                        1/17                   0/17                15/24
+base + rag                        3/19                   1/19                15/24
 fine-tuned + rag                 22/23                  16/23                15/24
 ```
 
@@ -124,10 +124,10 @@ The labels and the hash of each labeled reply are in `data/hand_labels.json`; bo
 
 - **The base model doesn't know the product, and says so rarely.** It invented "$49.99 per month" with a limited-time promotion, a 30-day trial, a 1,000-member limit, and Android apps from other companies. Its 5 key-fact pattern hits were all guesses; one contained a template placeholder: "[insert timeframe, e.g., 30 days]".
 - **The fine-tuned model recombines what it learned.** Fragments from other training answers turn up where they don't belong: "Ask for invoice payment through live chat" after a price; "We lock accounts for 30 minutes … Resetting your password is not possible"; "Press N, or use the New Task button" for how to link a pull request. It answered "Yes. We accept PayPal", the opposite of its training answer, and the rate-limit answer looped ("per key per key per minute…") until the token limit.
-- **It learned the format perfectly, and the citations less so.** 22 of 22 answers ended with a source line; 17 named an article that answers the question. The other five named a related but wrong article, or an article that doesn't exist ("Deleting your project", "Cancelling your organization").
-- **The 1B model with retrieval is uneven too.** Base + RAG declined 5 test questions whose answer was in the retrieved articles, sometimes started with the decline sentence and then answered anyway, and often pasted whole articles. It followed the "Source:" instruction once in 17 answers.
+- **It learned the format reliably, and the citations less so.** 22 of 22 answers ended with a source line; 17 named an article that answers the question. The other five named a related but wrong article, or an article that doesn't exist ("Deleting your project", "Cancelling your organization").
+- **The 1B model with retrieval is uneven too.** Base + RAG declined 5 test questions whose answer was in the retrieved articles, sometimes started with the decline sentence and then answered anyway, and often pasted whole articles. It followed the "Source:" instruction in 3 of 19 answers, once copying the placeholder from the instructions ("<title of the article ...>"), and named a right article once.
 - **After the update.** Base + RAG gave all 5 new values; two replies added a false statement ("no member limit, meaning you can have up to 10", and "$300 per year, which is the same as the Basic plan"). The fine-tuned model said "1 hour", "$25 per month", and "up to 5 members", the old values, plus two garbled answers. With retrieval, the fine-tuned model still said "1 hour" with the article saying 2 hours in front of it, and gave invented prices ($100).
-- **Training choices.** A first training run with LoRA rank 16 (at scale 20) diverged: the loss never fell below its starting value. With mlx-lm's default rank 8, the validation loss was lowest at 100 steps and flat from there to 300, so 100 steps was used. Longer adapters were not evaluated.
+- **Training choices.** A first configuration (LoRA rank 16, scale 20, 600 steps) diverged: the loss never fell below its starting value. With mlx-lm's default rank 8, the validation loss was lowest at 100 steps and changed little from there to 300 (1.15 to 1.21), so 100 steps was used. Longer adapters were not evaluated.
 
 ## Things to try
 

@@ -59,7 +59,8 @@ K = 3
 
 ANSWERABLE = {q["id"]: q for q in TEST["answerable"]}
 TWINS = {e["twin"]: e for e in TRAINING["train"] if "twin" in e}
-SOURCE_LINE = re.compile(r"^\s*Source:\s*(.+?)\s*$", re.MULTILINE | re.IGNORECASE)
+# A "Source:" line, also when the model wraps it in Markdown ("## Source: ...", "**Source:** ...").
+SOURCE_LINE = re.compile(r"^[\s#*_>-]*Source:[\s*_]*(.+?)[\s*_]*$", re.MULTILINE | re.IGNORECASE)
 DECLINED = re.compile(r"\b(don't|do not) have (that|this) information\b", re.IGNORECASE)
 
 
@@ -98,8 +99,8 @@ def source_ok(r: dict) -> bool | None:
     found = SOURCE_LINE.findall(r["reply"])
     if not found:
         return None
-    relevant = {titles(ARTICLES)[a] for a in ANSWERABLE[r["question_id"]]["relevant"]}
-    return found[-1] in relevant
+    relevant = {titles(ARTICLES)[a].lower() for a in ANSWERABLE[r["question_id"]]["relevant"]}
+    return found[-1].strip(" \"'").lower() in relevant
 
 
 def short(text: str, width: int = 120) -> str:
@@ -125,12 +126,14 @@ def report(records: list[dict]) -> None:
         return sum(1 for r in items if hand_label(r) == label)
 
     print("\n1. Hand labels: answerable questions and questions not in the help center\n")
-    print(f"{'':<18}{'test wording (24)':^36}{'training wording (24)':^24}{'not in docs (6)':^16}")
-    print(f"{'condition':<18}{'correct':>9}{'partly':>9}{'wrong':>8}{'declined':>10}{'correct':>14}{'partly':>9}{'declined':>15}")
+    print(f"{'':<18}{'test wording (24)':^36}{'training wording (24)':^38}{'not in docs (6)':^16}")
+    print(f"{'condition':<18}{'correct':>9}{'partly':>9}{'wrong':>8}{'declined':>10}"
+          f"{'correct':>12}{'partly':>9}{'wrong':>8}{'declined':>10}{'declined':>14}")
     for c in CONDITIONS:
         test, train, none = rows(c, "test"), rows(c, "training"), rows(c, "not in docs")
         print(f"{c:<18}{count(test, 'correct'):>9}{count(test, 'partly'):>9}{count(test, 'wrong'):>8}{count(test, 'declined'):>10}"
-              f"{count(train, 'correct'):>14}{count(train, 'partly'):>9}{count(none, 'declined'):>15}")
+              f"{count(train, 'correct'):>12}{count(train, 'partly'):>9}{count(train, 'wrong'):>8}{count(train, 'declined'):>10}"
+              f"{count(none, 'declined'):>14}")
     print("\ncorrect: the key fact is right and nothing in the reply is false.")
     print("partly: the key fact is right, but the reply also says something false, contradictory, or garbled.")
     print("wrong: an answer without the right key fact. declined: no answer.")
@@ -145,13 +148,15 @@ def report(records: list[dict]) -> None:
     print(f"{'condition':<18}{'source line present':>21}{'names a right article':>23}{'key fact (pattern)':>20}")
     for c in CONDITIONS:
         test = rows(c, "test")
-        shown = [r for r in test if grade(r) != "declined"]
+        shown = [r for r in test if hand_label(r) != "declined"]
         sources = [source_ok(r) for r in shown]
         print(f"{c:<18}{sum(x is not None for x in sources):>17}/{len(shown):<3}{sum(x is True for x in sources):>19}/{len(shown):<3}"
               f"{sum(grade(r) == 'key fact' for r in test):>17}/{len(test):<2}")
-    print("\nSource line: of the test-wording replies that weren't declines, how many ended with 'Source: <title>',")
-    print("and how many of those named an article that answers the question. The pattern check misgrades replies")
-    print("both ways (a garbled reply can contain the right number), which is why section 1 uses hand labels.")
+    print("\nSource line: of the test-wording replies that weren't declines (by the hand labels), how many had a")
+    print("'Source: <title>' line (also inside Markdown, like '## Source:'), and how many named, ignoring case,")
+    print("an article that answers the question.")
+    print("The pattern check misgrades replies both ways (a garbled reply can contain the right number),")
+    print("which is why sections 1 and 2 use hand labels.")
 
     unlabeled = [r for r in records if hand_label(r) is None]
     if unlabeled:
