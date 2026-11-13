@@ -1,0 +1,3 @@
+# The trained adapter (about 22 MB; rebuild with train.py) and saved evaluation runs
+adapters/
+python/results.jsonl

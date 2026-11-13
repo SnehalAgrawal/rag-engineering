@@ -1,10 +1,11 @@
 # rag-engineering
 
-Runnable retrieval-augmented generation (RAG) demos that accompany the AI engineering series on [snehalagrawal.com](https://snehalagrawal.com/articles/). Each demo is self-contained, in Python and JavaScript, and runs locally with [Ollama](https://ollama.com): no API keys or paid services.
+Runnable retrieval-augmented generation (RAG) demos that accompany the AI engineering series on [snehalagrawal.com](https://snehalagrawal.com/articles/). Each demo is self-contained and runs locally: no API keys or paid services. 01 runs in Python and JavaScript with [Ollama](https://ollama.com); 02 fine-tunes a model, so it is Python only and needs a Mac with Apple silicon ([MLX](https://github.com/ml-explore/mlx)).
 
 | Demo | Article | What it shows |
 |---|---|---|
 | [01-basic-rag](01-basic-rag/) | [RAG Explained: How AI Systems Work With Your Data](https://snehalagrawal.com/articles/rag-explained-how-ai-systems-work-with-your-data/) | Retrieval versus sending the whole knowledge base, on the same questions: what fits, what it costs, and what still breaks |
+| [02-rag-vs-fine-tuning](02-rag-vs-fine-tuning/) | [RAG vs Fine-Tuning: When Should You Use Which?](https://snehalagrawal.com/articles/rag-vs-fine-tuning-when-should-you-use-which/) | A real LoRA fine-tune against retrieval on the same model: what each one teaches, and what happens when a fact changes (Python, Apple silicon) |
 
 ## Linting
 

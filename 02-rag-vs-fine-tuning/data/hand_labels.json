@@ -1,0 +1,929 @@
+{
+ "_comment": "Hand labels for every reply in the reported runs, assigned by reading each reply. Answerable questions: correct (key fact right, nothing false), partly (key fact right, plus something false, contradictory, or garbled), wrong (answered without the right key fact), declined (no answer). Questions not in the help center: declined or answered. Changed facts: new, new (with an error), old, other. reply_sha256 identifies the exact reply a label belongs to; evaluate.py reports any reply that differs as unlabeled.",
+ "labels": {
+  "base | test | a01": {
+   "label": "wrong",
+   "reply_sha256": "6ad23383bda12277"
+  },
+  "base | test | a02": {
+   "label": "wrong",
+   "reply_sha256": "183e70e454e750aa"
+  },
+  "base | test | a03": {
+   "label": "wrong",
+   "reply_sha256": "53300549515a1eef"
+  },
+  "base | test | a04": {
+   "label": "wrong",
+   "reply_sha256": "e84e1cf14fdc5a4e"
+  },
+  "base | test | a05": {
+   "label": "wrong",
+   "reply_sha256": "11045d48e42f0d4c"
+  },
+  "base | test | a06": {
+   "label": "wrong",
+   "reply_sha256": "a41949697a494dbb"
+  },
+  "base | test | a07": {
+   "label": "wrong",
+   "reply_sha256": "4181efdf9e237097"
+  },
+  "base | test | a08": {
+   "label": "wrong",
+   "reply_sha256": "940d6988ef2c6c3a"
+  },
+  "base | test | a09": {
+   "label": "wrong",
+   "reply_sha256": "d3e53f4874365a2f"
+  },
+  "base | test | a10": {
+   "label": "partly",
+   "reply_sha256": "06ddfca0d9f53663"
+  },
+  "base | test | a11": {
+   "label": "wrong",
+   "reply_sha256": "9b177b7942884074"
+  },
+  "base | test | a12": {
+   "label": "wrong",
+   "reply_sha256": "c37ce463856fa1e8"
+  },
+  "base | test | a13": {
+   "label": "wrong",
+   "reply_sha256": "7ff4678d7fb145b1"
+  },
+  "base | test | a14": {
+   "label": "declined",
+   "reply_sha256": "306158f5e276d06f"
+  },
+  "base | test | a15": {
+   "label": "wrong",
+   "reply_sha256": "fe73b03fff5cc029"
+  },
+  "base | test | a16": {
+   "label": "wrong",
+   "reply_sha256": "9fe28543f22099ee"
+  },
+  "base | test | a17": {
+   "label": "wrong",
+   "reply_sha256": "e737f59dc16a2d64"
+  },
+  "base | test | a18": {
+   "label": "wrong",
+   "reply_sha256": "49435a43534e1f3b"
+  },
+  "base | test | a19": {
+   "label": "wrong",
+   "reply_sha256": "62a88e46e5188b61"
+  },
+  "base | test | a20": {
+   "label": "wrong",
+   "reply_sha256": "5edad8746b69aff8"
+  },
+  "base | test | a21": {
+   "label": "wrong",
+   "reply_sha256": "4f315dabad79b302"
+  },
+  "base | test | a22": {
+   "label": "wrong",
+   "reply_sha256": "233ccdb208993f11"
+  },
+  "base | test | a23": {
+   "label": "partly",
+   "reply_sha256": "4f861c578ceb57eb"
+  },
+  "base | test | a24": {
+   "label": "wrong",
+   "reply_sha256": "a797135605c90bef"
+  },
+  "base | training | a01": {
+   "label": "wrong",
+   "reply_sha256": "3f473dfd861f4cbc"
+  },
+  "base | training | a02": {
+   "label": "wrong",
+   "reply_sha256": "49dd5fb82ee33dbd"
+  },
+  "base | training | a03": {
+   "label": "wrong",
+   "reply_sha256": "a4adeee37c43af67"
+  },
+  "base | training | a04": {
+   "label": "wrong",
+   "reply_sha256": "408a2960f2a8cea3"
+  },
+  "base | training | a05": {
+   "label": "wrong",
+   "reply_sha256": "1627baded0178013"
+  },
+  "base | training | a06": {
+   "label": "wrong",
+   "reply_sha256": "3d24dc9305cef939"
+  },
+  "base | training | a07": {
+   "label": "wrong",
+   "reply_sha256": "f88df0d9ad2cad65"
+  },
+  "base | training | a08": {
+   "label": "wrong",
+   "reply_sha256": "2efe64c8fb4217f6"
+  },
+  "base | training | a09": {
+   "label": "wrong",
+   "reply_sha256": "e669f44c9a11f160"
+  },
+  "base | training | a10": {
+   "label": "wrong",
+   "reply_sha256": "175ddcd34ee42879"
+  },
+  "base | training | a11": {
+   "label": "wrong",
+   "reply_sha256": "94220550bee67f66"
+  },
+  "base | training | a12": {
+   "label": "declined",
+   "reply_sha256": "06398b5f5b27782d"
+  },
+  "base | training | a13": {
+   "label": "wrong",
+   "reply_sha256": "f1bebcad33d4cb12"
+  },
+  "base | training | a14": {
+   "label": "wrong",
+   "reply_sha256": "48ddbc715dcadd21"
+  },
+  "base | training | a15": {
+   "label": "wrong",
+   "reply_sha256": "3d015926a793c8fb"
+  },
+  "base | training | a16": {
+   "label": "wrong",
+   "reply_sha256": "c7661abb09e34a55"
+  },
+  "base | training | a17": {
+   "label": "wrong",
+   "reply_sha256": "57b633b0fa94e12a"
+  },
+  "base | training | a18": {
+   "label": "wrong",
+   "reply_sha256": "e86c6d372c903bf8"
+  },
+  "base | training | a19": {
+   "label": "wrong",
+   "reply_sha256": "784f773884dd2e37"
+  },
+  "base | training | a20": {
+   "label": "wrong",
+   "reply_sha256": "6d56dd194b833b52"
+  },
+  "base | training | a21": {
+   "label": "wrong",
+   "reply_sha256": "75f32125ff9f3d7a"
+  },
+  "base | training | a22": {
+   "label": "wrong",
+   "reply_sha256": "9806f4bf5ff534bf"
+  },
+  "base | training | a23": {
+   "label": "partly",
+   "reply_sha256": "3b6cf11b69f9c0af"
+  },
+  "base | training | a24": {
+   "label": "wrong",
+   "reply_sha256": "d4363624a162b219"
+  },
+  "base | not in docs | n01": {
+   "label": "answered",
+   "reply_sha256": "db78f1a4b4e58f2f"
+  },
+  "base | not in docs | n02": {
+   "label": "answered",
+   "reply_sha256": "74d71df363cfdc5a"
+  },
+  "base | not in docs | n03": {
+   "label": "answered",
+   "reply_sha256": "8441c36bfe25dfc5"
+  },
+  "base | not in docs | n04": {
+   "label": "answered",
+   "reply_sha256": "317a2a3e58a6124f"
+  },
+  "base | not in docs | n05": {
+   "label": "answered",
+   "reply_sha256": "e2112a4bb5d61097"
+  },
+  "base | not in docs | n06": {
+   "label": "answered",
+   "reply_sha256": "c3e4be9c780826db"
+  },
+  "base + rag | test | a01": {
+   "label": "correct",
+   "reply_sha256": "2ecd1681bd3b7ec3"
+  },
+  "base + rag | test | a02": {
+   "label": "correct",
+   "reply_sha256": "8e85ee332e8c2ef5"
+  },
+  "base + rag | test | a03": {
+   "label": "correct",
+   "reply_sha256": "3e64821ce9f52ef3"
+  },
+  "base + rag | test | a04": {
+   "label": "partly",
+   "reply_sha256": "6b80ede104b52479"
+  },
+  "base + rag | test | a05": {
+   "label": "correct",
+   "reply_sha256": "753e7c125f480bcc"
+  },
+  "base + rag | test | a06": {
+   "label": "declined",
+   "reply_sha256": "5584914fb67144cc"
+  },
+  "base + rag | test | a07": {
+   "label": "correct",
+   "reply_sha256": "6d9d309d49eea43b"
+  },
+  "base + rag | test | a08": {
+   "label": "partly",
+   "reply_sha256": "b3af1bc208e1ca61"
+  },
+  "base + rag | test | a09": {
+   "label": "wrong",
+   "reply_sha256": "36856bab131f4c76"
+  },
+  "base + rag | test | a10": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "base + rag | test | a11": {
+   "label": "partly",
+   "reply_sha256": "78989f87f738b4d4"
+  },
+  "base + rag | test | a12": {
+   "label": "correct",
+   "reply_sha256": "fe5711d7caf1a88f"
+  },
+  "base + rag | test | a13": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "base + rag | test | a14": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "base + rag | test | a15": {
+   "label": "partly",
+   "reply_sha256": "29061a445e948740"
+  },
+  "base + rag | test | a16": {
+   "label": "declined",
+   "reply_sha256": "eecd500447401a6f"
+  },
+  "base + rag | test | a17": {
+   "label": "partly",
+   "reply_sha256": "e7928dd09b601bd8"
+  },
+  "base + rag | test | a18": {
+   "label": "partly",
+   "reply_sha256": "490c59a77aeca4f5"
+  },
+  "base + rag | test | a19": {
+   "label": "correct",
+   "reply_sha256": "cf11781523686570"
+  },
+  "base + rag | test | a20": {
+   "label": "wrong",
+   "reply_sha256": "49a0c6a2256e22c8"
+  },
+  "base + rag | test | a21": {
+   "label": "wrong",
+   "reply_sha256": "e6ffddea3dfba8f2"
+  },
+  "base + rag | test | a22": {
+   "label": "correct",
+   "reply_sha256": "179ef90b9fff7d7c"
+  },
+  "base + rag | test | a23": {
+   "label": "correct",
+   "reply_sha256": "163d0bd87ae2249d"
+  },
+  "base + rag | test | a24": {
+   "label": "correct",
+   "reply_sha256": "082fce09ba61356e"
+  },
+  "base + rag | training | a01": {
+   "label": "correct",
+   "reply_sha256": "ac8c0a4664075e28"
+  },
+  "base + rag | training | a02": {
+   "label": "correct",
+   "reply_sha256": "2e23e4dd63b9ae50"
+  },
+  "base + rag | training | a03": {
+   "label": "partly",
+   "reply_sha256": "04434b7e97782896"
+  },
+  "base + rag | training | a04": {
+   "label": "partly",
+   "reply_sha256": "79e05421f3208888"
+  },
+  "base + rag | training | a05": {
+   "label": "correct",
+   "reply_sha256": "cc71657be8aa253b"
+  },
+  "base + rag | training | a06": {
+   "label": "correct",
+   "reply_sha256": "10a56afaa0f9a865"
+  },
+  "base + rag | training | a07": {
+   "label": "wrong",
+   "reply_sha256": "c48397897cd96fe1"
+  },
+  "base + rag | training | a08": {
+   "label": "correct",
+   "reply_sha256": "427a8ff24a8d93bb"
+  },
+  "base + rag | training | a09": {
+   "label": "declined",
+   "reply_sha256": "3a08a8a0eb1de900"
+  },
+  "base + rag | training | a10": {
+   "label": "correct",
+   "reply_sha256": "0a48903c8b652435"
+  },
+  "base + rag | training | a11": {
+   "label": "wrong",
+   "reply_sha256": "25c48a31ad446e28"
+  },
+  "base + rag | training | a12": {
+   "label": "correct",
+   "reply_sha256": "4aa4098e38193ac5"
+  },
+  "base + rag | training | a13": {
+   "label": "correct",
+   "reply_sha256": "17afeafa02d5eb77"
+  },
+  "base + rag | training | a14": {
+   "label": "correct",
+   "reply_sha256": "9db66dead646a424"
+  },
+  "base + rag | training | a15": {
+   "label": "partly",
+   "reply_sha256": "1c19799ae9072742"
+  },
+  "base + rag | training | a16": {
+   "label": "declined",
+   "reply_sha256": "29f6a26a051fc5bf"
+  },
+  "base + rag | training | a17": {
+   "label": "partly",
+   "reply_sha256": "de7e383b32b0f2bd"
+  },
+  "base + rag | training | a18": {
+   "label": "partly",
+   "reply_sha256": "3c1f0ea96956e5a0"
+  },
+  "base + rag | training | a19": {
+   "label": "partly",
+   "reply_sha256": "7b3388342bfb66af"
+  },
+  "base + rag | training | a20": {
+   "label": "correct",
+   "reply_sha256": "4e6734d3ace0d405"
+  },
+  "base + rag | training | a21": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "base + rag | training | a22": {
+   "label": "partly",
+   "reply_sha256": "b8b301aef6e96893"
+  },
+  "base + rag | training | a23": {
+   "label": "partly",
+   "reply_sha256": "9b592b044757314f"
+  },
+  "base + rag | training | a24": {
+   "label": "correct",
+   "reply_sha256": "af8335890a011ddb"
+  },
+  "base + rag | not in docs | n01": {
+   "label": "answered",
+   "reply_sha256": "39bf9173af1970fa"
+  },
+  "base + rag | not in docs | n02": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "base + rag | not in docs | n03": {
+   "label": "declined",
+   "reply_sha256": "7869668879ce2295"
+  },
+  "base + rag | not in docs | n04": {
+   "label": "answered",
+   "reply_sha256": "6f7cd997541c2eaa"
+  },
+  "base + rag | not in docs | n05": {
+   "label": "answered",
+   "reply_sha256": "03510f7a579dc8e7"
+  },
+  "base + rag | not in docs | n06": {
+   "label": "declined",
+   "reply_sha256": "a31dab27e9babcc3"
+  },
+  "base + rag | changed | a01": {
+   "label": "new",
+   "reply_sha256": "72155fc05cdd3bff"
+  },
+  "base + rag | changed | a02": {
+   "label": "new",
+   "reply_sha256": "974806b57e32f7f3"
+  },
+  "base + rag | changed | a11": {
+   "label": "new (with an error)",
+   "reply_sha256": "464750c5a2b344b8"
+  },
+  "base + rag | changed | a21": {
+   "label": "new (with an error)",
+   "reply_sha256": "34a4393db7c70ca8"
+  },
+  "base + rag | changed | a24": {
+   "label": "new",
+   "reply_sha256": "b4400e0e7f42ee9c"
+  },
+  "fine-tuned | test | a01": {
+   "label": "correct",
+   "reply_sha256": "ec09609da2e36e45"
+  },
+  "fine-tuned | test | a02": {
+   "label": "partly",
+   "reply_sha256": "00ee19b8d54f79f7"
+  },
+  "fine-tuned | test | a03": {
+   "label": "correct",
+   "reply_sha256": "eb51649a7ca4cf4f"
+  },
+  "fine-tuned | test | a04": {
+   "label": "wrong",
+   "reply_sha256": "d9bec3e56be116f6"
+  },
+  "fine-tuned | test | a05": {
+   "label": "partly",
+   "reply_sha256": "5ce1d973a2d7b33e"
+  },
+  "fine-tuned | test | a06": {
+   "label": "wrong",
+   "reply_sha256": "78e47a55ddd783b8"
+  },
+  "fine-tuned | test | a07": {
+   "label": "correct",
+   "reply_sha256": "9905ceabbadce28c"
+  },
+  "fine-tuned | test | a08": {
+   "label": "correct",
+   "reply_sha256": "52d8432841ba18c3"
+  },
+  "fine-tuned | test | a09": {
+   "label": "partly",
+   "reply_sha256": "f3643a2324e2791a"
+  },
+  "fine-tuned | test | a10": {
+   "label": "wrong",
+   "reply_sha256": "66bf41d01f0fce32"
+  },
+  "fine-tuned | test | a11": {
+   "label": "partly",
+   "reply_sha256": "e3cc02319fb41c06"
+  },
+  "fine-tuned | test | a12": {
+   "label": "correct",
+   "reply_sha256": "6ddee9059ed57cb3"
+  },
+  "fine-tuned | test | a13": {
+   "label": "correct",
+   "reply_sha256": "8eb20073a49c416f"
+  },
+  "fine-tuned | test | a14": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned | test | a15": {
+   "label": "wrong",
+   "reply_sha256": "5303982866f3631f"
+  },
+  "fine-tuned | test | a16": {
+   "label": "partly",
+   "reply_sha256": "029cd8fa6684b84e"
+  },
+  "fine-tuned | test | a17": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned | test | a18": {
+   "label": "wrong",
+   "reply_sha256": "69d9fb7d1043bcd6"
+  },
+  "fine-tuned | test | a19": {
+   "label": "correct",
+   "reply_sha256": "dc3430dbd87b1986"
+  },
+  "fine-tuned | test | a20": {
+   "label": "wrong",
+   "reply_sha256": "08e3f0f8f74995f9"
+  },
+  "fine-tuned | test | a21": {
+   "label": "wrong",
+   "reply_sha256": "fc29a49d928d0df3"
+  },
+  "fine-tuned | test | a22": {
+   "label": "wrong",
+   "reply_sha256": "06ec677d2cb064e4"
+  },
+  "fine-tuned | test | a23": {
+   "label": "partly",
+   "reply_sha256": "e8f0eb563764cdc7"
+  },
+  "fine-tuned | test | a24": {
+   "label": "wrong",
+   "reply_sha256": "481ce7cdf6972cef"
+  },
+  "fine-tuned | training | a01": {
+   "label": "correct",
+   "reply_sha256": "ec09609da2e36e45"
+  },
+  "fine-tuned | training | a02": {
+   "label": "correct",
+   "reply_sha256": "a4fb6eef67ede645"
+  },
+  "fine-tuned | training | a03": {
+   "label": "correct",
+   "reply_sha256": "eb51649a7ca4cf4f"
+  },
+  "fine-tuned | training | a04": {
+   "label": "wrong",
+   "reply_sha256": "e7d1dcf571e90216"
+  },
+  "fine-tuned | training | a05": {
+   "label": "correct",
+   "reply_sha256": "969488b10f73ef8f"
+  },
+  "fine-tuned | training | a06": {
+   "label": "correct",
+   "reply_sha256": "f745319ddb78e071"
+  },
+  "fine-tuned | training | a07": {
+   "label": "correct",
+   "reply_sha256": "a2c5ae9a270b91b7"
+  },
+  "fine-tuned | training | a08": {
+   "label": "correct",
+   "reply_sha256": "f438eb2741886451"
+  },
+  "fine-tuned | training | a09": {
+   "label": "correct",
+   "reply_sha256": "3050c7b0bcde4fff"
+  },
+  "fine-tuned | training | a10": {
+   "label": "correct",
+   "reply_sha256": "87dd1069f31a95e9"
+  },
+  "fine-tuned | training | a11": {
+   "label": "correct",
+   "reply_sha256": "9c4b0046200ab1a8"
+  },
+  "fine-tuned | training | a12": {
+   "label": "correct",
+   "reply_sha256": "6ddee9059ed57cb3"
+  },
+  "fine-tuned | training | a13": {
+   "label": "correct",
+   "reply_sha256": "c34173a5c36b8864"
+  },
+  "fine-tuned | training | a14": {
+   "label": "partly",
+   "reply_sha256": "a9a0f22738a98e64"
+  },
+  "fine-tuned | training | a15": {
+   "label": "wrong",
+   "reply_sha256": "ac4779a3c6661dda"
+  },
+  "fine-tuned | training | a16": {
+   "label": "partly",
+   "reply_sha256": "f434554590fa5b61"
+  },
+  "fine-tuned | training | a17": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned | training | a18": {
+   "label": "partly",
+   "reply_sha256": "d1d2a8f2bd196d25"
+  },
+  "fine-tuned | training | a19": {
+   "label": "correct",
+   "reply_sha256": "dc3430dbd87b1986"
+  },
+  "fine-tuned | training | a20": {
+   "label": "wrong",
+   "reply_sha256": "d79c617f71188611"
+  },
+  "fine-tuned | training | a21": {
+   "label": "wrong",
+   "reply_sha256": "b4abea514bed9888"
+  },
+  "fine-tuned | training | a22": {
+   "label": "wrong",
+   "reply_sha256": "50b299e1baa08f30"
+  },
+  "fine-tuned | training | a23": {
+   "label": "correct",
+   "reply_sha256": "10e5065b356f630c"
+  },
+  "fine-tuned | training | a24": {
+   "label": "wrong",
+   "reply_sha256": "186699b40a733c88"
+  },
+  "fine-tuned | not in docs | n01": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned | not in docs | n02": {
+   "label": "answered",
+   "reply_sha256": "1b2f837ea213a032"
+  },
+  "fine-tuned | not in docs | n03": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned | not in docs | n04": {
+   "label": "answered",
+   "reply_sha256": "4af9360fb442c22a"
+  },
+  "fine-tuned | not in docs | n05": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned | not in docs | n06": {
+   "label": "answered",
+   "reply_sha256": "d853ba8a5596ee01"
+  },
+  "fine-tuned + rag | test | a01": {
+   "label": "correct",
+   "reply_sha256": "ec09609da2e36e45"
+  },
+  "fine-tuned + rag | test | a02": {
+   "label": "wrong",
+   "reply_sha256": "3128dbe7b273e1bb"
+  },
+  "fine-tuned + rag | test | a03": {
+   "label": "correct",
+   "reply_sha256": "eb51649a7ca4cf4f"
+  },
+  "fine-tuned + rag | test | a04": {
+   "label": "wrong",
+   "reply_sha256": "81c4c538052419e6"
+  },
+  "fine-tuned + rag | test | a05": {
+   "label": "partly",
+   "reply_sha256": "ae9c35c31649ccfb"
+  },
+  "fine-tuned + rag | test | a06": {
+   "label": "partly",
+   "reply_sha256": "ffd28563b223c3b0"
+  },
+  "fine-tuned + rag | test | a07": {
+   "label": "wrong",
+   "reply_sha256": "a41a1ea7a530cffb"
+  },
+  "fine-tuned + rag | test | a08": {
+   "label": "correct",
+   "reply_sha256": "9a6ad4d123a6ba2d"
+  },
+  "fine-tuned + rag | test | a09": {
+   "label": "wrong",
+   "reply_sha256": "b5d77080f539b6f9"
+  },
+  "fine-tuned + rag | test | a10": {
+   "label": "partly",
+   "reply_sha256": "2ec9e95d0ea4a90f"
+  },
+  "fine-tuned + rag | test | a11": {
+   "label": "correct",
+   "reply_sha256": "9c4b0046200ab1a8"
+  },
+  "fine-tuned + rag | test | a12": {
+   "label": "correct",
+   "reply_sha256": "c50d8da58a14c50d"
+  },
+  "fine-tuned + rag | test | a13": {
+   "label": "wrong",
+   "reply_sha256": "23257d5720c52d3a"
+  },
+  "fine-tuned + rag | test | a14": {
+   "label": "partly",
+   "reply_sha256": "fb15603276a2b038"
+  },
+  "fine-tuned + rag | test | a15": {
+   "label": "wrong",
+   "reply_sha256": "d6e18aa385df9ac6"
+  },
+  "fine-tuned + rag | test | a16": {
+   "label": "partly",
+   "reply_sha256": "4c3ec96c9978a113"
+  },
+  "fine-tuned + rag | test | a17": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned + rag | test | a18": {
+   "label": "partly",
+   "reply_sha256": "216bfe82a2879df2"
+  },
+  "fine-tuned + rag | test | a19": {
+   "label": "correct",
+   "reply_sha256": "05f64a1848b5968a"
+  },
+  "fine-tuned + rag | test | a20": {
+   "label": "wrong",
+   "reply_sha256": "47348229c5d14228"
+  },
+  "fine-tuned + rag | test | a21": {
+   "label": "wrong",
+   "reply_sha256": "02dbf4326dd9746a"
+  },
+  "fine-tuned + rag | test | a22": {
+   "label": "partly",
+   "reply_sha256": "00dc81591ed78c64"
+  },
+  "fine-tuned + rag | test | a23": {
+   "label": "wrong",
+   "reply_sha256": "2e6a6716c842cb55"
+  },
+  "fine-tuned + rag | test | a24": {
+   "label": "wrong",
+   "reply_sha256": "84c42686fb71c974"
+  },
+  "fine-tuned + rag | training | a01": {
+   "label": "correct",
+   "reply_sha256": "ec09609da2e36e45"
+  },
+  "fine-tuned + rag | training | a02": {
+   "label": "wrong",
+   "reply_sha256": "b34afafa37e9d0ca"
+  },
+  "fine-tuned + rag | training | a03": {
+   "label": "correct",
+   "reply_sha256": "eb51649a7ca4cf4f"
+  },
+  "fine-tuned + rag | training | a04": {
+   "label": "wrong",
+   "reply_sha256": "36a7d5d38b404fea"
+  },
+  "fine-tuned + rag | training | a05": {
+   "label": "partly",
+   "reply_sha256": "1596f432b41aa86a"
+  },
+  "fine-tuned + rag | training | a06": {
+   "label": "partly",
+   "reply_sha256": "188e120952f7e03e"
+  },
+  "fine-tuned + rag | training | a07": {
+   "label": "wrong",
+   "reply_sha256": "7c1ed08835e1bb26"
+  },
+  "fine-tuned + rag | training | a08": {
+   "label": "wrong",
+   "reply_sha256": "55a8ea4877a1503e"
+  },
+  "fine-tuned + rag | training | a09": {
+   "label": "partly",
+   "reply_sha256": "3f4bfdd594ab4c73"
+  },
+  "fine-tuned + rag | training | a10": {
+   "label": "correct",
+   "reply_sha256": "87dd1069f31a95e9"
+  },
+  "fine-tuned + rag | training | a11": {
+   "label": "correct",
+   "reply_sha256": "f0c6b2d2b36f08ba"
+  },
+  "fine-tuned + rag | training | a12": {
+   "label": "correct",
+   "reply_sha256": "1024fc0c3371afbb"
+  },
+  "fine-tuned + rag | training | a13": {
+   "label": "wrong",
+   "reply_sha256": "2a1ed7deb6ba5bf0"
+  },
+  "fine-tuned + rag | training | a14": {
+   "label": "partly",
+   "reply_sha256": "13deaef3df5135eb"
+  },
+  "fine-tuned + rag | training | a15": {
+   "label": "wrong",
+   "reply_sha256": "a1089942132cf509"
+  },
+  "fine-tuned + rag | training | a16": {
+   "label": "partly",
+   "reply_sha256": "5ec37b48fe06778b"
+  },
+  "fine-tuned + rag | training | a17": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned + rag | training | a18": {
+   "label": "correct",
+   "reply_sha256": "7a0d435d394c1fdf"
+  },
+  "fine-tuned + rag | training | a19": {
+   "label": "correct",
+   "reply_sha256": "f06ffa9bdfb9f7ab"
+  },
+  "fine-tuned + rag | training | a20": {
+   "label": "wrong",
+   "reply_sha256": "3248219b9aba2230"
+  },
+  "fine-tuned + rag | training | a21": {
+   "label": "wrong",
+   "reply_sha256": "91d8837a3907ddb9"
+  },
+  "fine-tuned + rag | training | a22": {
+   "label": "partly",
+   "reply_sha256": "b6dd2f9920ead77d"
+  },
+  "fine-tuned + rag | training | a23": {
+   "label": "partly",
+   "reply_sha256": "c65be0171729b1dd"
+  },
+  "fine-tuned + rag | training | a24": {
+   "label": "wrong",
+   "reply_sha256": "df56fe17cc56f400"
+  },
+  "fine-tuned + rag | not in docs | n01": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned + rag | not in docs | n02": {
+   "label": "answered",
+   "reply_sha256": "5587a88faf899a5e"
+  },
+  "fine-tuned + rag | not in docs | n03": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned + rag | not in docs | n04": {
+   "label": "answered",
+   "reply_sha256": "aedfe9b8596aca6e"
+  },
+  "fine-tuned + rag | not in docs | n05": {
+   "label": "declined",
+   "reply_sha256": "6800c0a0784e942e"
+  },
+  "fine-tuned + rag | not in docs | n06": {
+   "label": "answered",
+   "reply_sha256": "beb8e92cd085b096"
+  },
+  "fine-tuned | changed | a01": {
+   "label": "old",
+   "reply_sha256": "ec09609da2e36e45"
+  },
+  "fine-tuned | changed | a02": {
+   "label": "old",
+   "reply_sha256": "00ee19b8d54f79f7"
+  },
+  "fine-tuned | changed | a11": {
+   "label": "old",
+   "reply_sha256": "e3cc02319fb41c06"
+  },
+  "fine-tuned | changed | a21": {
+   "label": "other",
+   "reply_sha256": "fc29a49d928d0df3"
+  },
+  "fine-tuned | changed | a24": {
+   "label": "other",
+   "reply_sha256": "481ce7cdf6972cef"
+  },
+  "fine-tuned + rag | changed | a01": {
+   "label": "old",
+   "reply_sha256": "ec09609da2e36e45"
+  },
+  "fine-tuned + rag | changed | a02": {
+   "label": "other",
+   "reply_sha256": "b34afafa37e9d0ca"
+  },
+  "fine-tuned + rag | changed | a11": {
+   "label": "new",
+   "reply_sha256": "a608214f5050d922"
+  },
+  "fine-tuned + rag | changed | a21": {
+   "label": "other",
+   "reply_sha256": "02dbf4326dd9746a"
+  },
+  "fine-tuned + rag | changed | a24": {
+   "label": "other",
+   "reply_sha256": "84c42686fb71c974"
+  }
+ }
+}

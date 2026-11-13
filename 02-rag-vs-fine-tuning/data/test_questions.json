@@ -1,0 +1,289 @@
+{
+  "_comment": "The test questions from 01-basic-rag, unchanged. None of them appears in the training data: the training set covers the same facts in different words, and each answerable question's training counterpart is marked with 'twin' in training_qa.json. Test questions. 'answerable' questions are answered by the help center: 'relevant' lists the article(s) that contain the answer (any one of them is enough), and 'patterns' are regular expressions, at least one of which must match a reply that contains the key fact. The patterns were checked against a hand reading of every reply; read replies yourself too, because a pattern can't tell a right answer from a wrong one that mentions the same fact. 'not_in_docs' questions sound like support questions, but the help center doesn't answer them; the right behavior is to decline.",
+  "answerable": [
+    {
+      "id": "a01",
+      "question": "How long is the password reset link valid?",
+      "relevant": [
+        "password"
+      ],
+      "patterns": [
+        "\\b1\\s*hour",
+        "\\bone\\s*hour",
+        "\\b60\\s*minutes"
+      ]
+    },
+    {
+      "id": "a02",
+      "question": "How much is the Pro plan?",
+      "relevant": [
+        "plans"
+      ],
+      "patterns": [
+        "\\$\\s?25\\b"
+      ]
+    },
+    {
+      "id": "a03",
+      "question": "Where do I export my data?",
+      "relevant": [
+        "export"
+      ],
+      "patterns": [
+        "(?=[\\s\\S]*\\bSettings\\b)(?=[\\s\\S]*\\bData\\b)(?=[\\s\\S]*\\bExport)"
+      ]
+    },
+    {
+      "id": "a04",
+      "question": "How do I get my money back?",
+      "relevant": [
+        "refunds"
+      ],
+      "patterns": [
+        "\\b30\\s*days",
+        "\\bthirty\\s*days"
+      ]
+    },
+    {
+      "id": "a05",
+      "question": "How long is the free trial?",
+      "relevant": [
+        "free-trial",
+        "getting-started"
+      ],
+      "patterns": [
+        "\\b14\\s*-?\\s*days?",
+        "\\bfourteen\\b"
+      ]
+    },
+    {
+      "id": "a06",
+      "question": "Can I pay with PayPal?",
+      "relevant": [
+        "payment-methods"
+      ],
+      "patterns": [
+        "\\b(no|not|don't|cannot|can't)\\b"
+      ]
+    },
+    {
+      "id": "a07",
+      "question": "What happens if my card payment fails?",
+      "relevant": [
+        "failed-payments"
+      ],
+      "patterns": [
+        "\\b(3|three)\\s*times",
+        "\\bretr(y|ies|ied)\\b"
+      ]
+    },
+    {
+      "id": "a08",
+      "question": "How long do you keep my data after I cancel?",
+      "relevant": [
+        "data-retention"
+      ],
+      "patterns": [
+        "\\b90\\s*days",
+        "\\bninety\\b"
+      ]
+    },
+    {
+      "id": "a09",
+      "question": "I'm locked out after too many login attempts. What can I do?",
+      "relevant": [
+        "locked-account"
+      ],
+      "patterns": [
+        "\\b30\\s*minutes",
+        "reset your password"
+      ]
+    },
+    {
+      "id": "a10",
+      "question": "Is single sign-on available on the Basic plan?",
+      "relevant": [
+        "sso"
+      ],
+      "patterns": [
+        "\\b(no|not)\\b"
+      ]
+    },
+    {
+      "id": "a11",
+      "question": "How many members can I have on the Basic plan?",
+      "relevant": [
+        "invite-members"
+      ],
+      "patterns": [
+        "\\b5\\b",
+        "\\bfive\\b"
+      ]
+    },
+    {
+      "id": "a12",
+      "question": "Who is allowed to delete the organization?",
+      "relevant": [
+        "roles",
+        "delete-organization"
+      ],
+      "patterns": [
+        "\\bowner\\b"
+      ]
+    },
+    {
+      "id": "a13",
+      "question": "What is the biggest file I can attach on the Pro plan?",
+      "relevant": [
+        "file-uploads"
+      ],
+      "patterns": [
+        "\\b2\\s*GB\\b"
+      ]
+    },
+    {
+      "id": "a14",
+      "question": "How many API requests per minute can I make on Pro?",
+      "relevant": [
+        "rate-limits"
+      ],
+      "patterns": [
+        "\\b1,?000\\b"
+      ]
+    },
+    {
+      "id": "a15",
+      "question": "How can I verify that a webhook request came from you?",
+      "relevant": [
+        "webhooks"
+      ],
+      "patterns": [
+        "\\bHMAC",
+        "X-Signature"
+      ]
+    },
+    {
+      "id": "a16",
+      "question": "I deleted a project by mistake last week. Can I get it back?",
+      "relevant": [
+        "trash"
+      ],
+      "patterns": [
+        "^\\W*yes\\b",
+        "\\bcan (still )?(restore|recover)\\b"
+      ]
+    },
+    {
+      "id": "a17",
+      "question": "Is there an Android app?",
+      "relevant": [
+        "mobile-apps"
+      ],
+      "patterns": [
+        "\\byes\\b",
+        "\\biOS and Android\\b",
+        "\\bAndroid apps? (is|are) (available|free)\\b"
+      ]
+    },
+    {
+      "id": "a18",
+      "question": "Can we move our data from the US region to the EU?",
+      "relevant": [
+        "data-location"
+      ],
+      "patterns": [
+        "\\bnew organization\\b",
+        "\\b(no|cannot|can't|can not)\\b"
+      ]
+    },
+    {
+      "id": "a19",
+      "question": "When do you do scheduled maintenance?",
+      "relevant": [
+        "status"
+      ],
+      "patterns": [
+        "\\bsundays?\\b"
+      ]
+    },
+    {
+      "id": "a20",
+      "question": "How do I link a pull request to a task?",
+      "relevant": [
+        "integrations"
+      ],
+      "patterns": [
+        "\\bbranch"
+      ]
+    },
+    {
+      "id": "a21",
+      "question": "What does the Pro plan cost per year?",
+      "relevant": [
+        "annual-billing"
+      ],
+      "patterns": [
+        "\\$\\s?250\\b"
+      ]
+    },
+    {
+      "id": "a22",
+      "question": "If I cancel, can I still download my data afterwards?",
+      "relevant": [
+        "data-retention"
+      ],
+      "patterns": [
+        "\\b90\\s*days",
+        "\\bninety\\b"
+      ]
+    },
+    {
+      "id": "a23",
+      "question": "Can I bring in tasks from a spreadsheet?",
+      "relevant": [
+        "import"
+      ],
+      "patterns": [
+        "\\bCSV\\b"
+      ]
+    },
+    {
+      "id": "a24",
+      "question": "How long does a teammate have to accept an invitation?",
+      "relevant": [
+        "invite-members"
+      ],
+      "patterns": [
+        "\\b7\\s*days",
+        "\\bseven\\s*days",
+        "\\b(one|1)\\s*week"
+      ]
+    }
+  ],
+  "not_in_docs": [
+    {
+      "id": "n01",
+      "question": "Do you have a phone number I can call?"
+    },
+    {
+      "id": "n02",
+      "question": "How many days does it take for a refund to arrive?"
+    },
+    {
+      "id": "n03",
+      "question": "Do you offer a discount for nonprofits?"
+    },
+    {
+      "id": "n04",
+      "question": "Can I pay in euros?"
+    },
+    {
+      "id": "n05",
+      "question": "Is there a desktop app for Windows?"
+    },
+    {
+      "id": "n06",
+      "question": "What is the maximum number of tasks in one project?"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "_comment": "Fine-tuning data, written for this demo from help_center.json. Every answer comes from the article named in 'article'; prepare_data.py adds the line 'Source: <article title>' to each answer. 'twin' marks the training question that covers the same fact as a test question (test_questions.json); the test questions themselves never appear here. 'decline' examples are out-of-scope questions (different from the test set's) that should get the decline message. 'valid' examples are only used to watch the validation loss during training.",
+  "decline_answer": "I don't have that information in our help center. Our support team is available 24/7 via live chat.",
+  "train": [
+    {"article": "getting-started", "question": "How do I create my first project?", "answer": "Click New Project in the top-right corner of the dashboard and give the project a name."},
+    {"article": "getting-started", "question": "Do I need a credit card to try the product?", "answer": "No. Every new organization starts with a 14-day free trial of the Pro plan, and no credit card is required."},
+    {"article": "getting-started", "question": "What should I do first after signing up?", "answer": "Create a project with New Project, invite teammates, import your existing tasks, and connect Slack. The checklist on the dashboard walks you through these steps."},
+
+    {"article": "plans", "question": "What does the Basic plan cost?", "answer": "The Basic plan costs $10 per month and includes 3 projects."},
+    {"article": "plans", "question": "What's the monthly price of Pro?", "answer": "The Pro plan costs $25 per month and includes unlimited projects.", "twin": "a02"},
+    {"article": "plans", "question": "How many projects come with the Basic plan?", "answer": "The Basic plan includes 3 projects. The Pro plan includes unlimited projects."},
+
+    {"article": "free-trial", "question": "How many days does the Pro trial last?", "answer": "The Pro trial lasts 14 days and includes every Pro feature.", "twin": "a05"},
+    {"article": "free-trial", "question": "What happens when my trial ends?", "answer": "If you don't upgrade, the organization moves to the Basic plan. Nothing is deleted, but projects beyond the Basic limit of 3 become read-only until you upgrade or archive them."},
+    {"article": "free-trial", "question": "Can I start a second free trial?", "answer": "No. Each organization can start one trial, and creating a second organization to extend a trial is not allowed."},
+
+    {"article": "change-plan", "question": "How do I upgrade to Pro?", "answer": "Go to Settings > Billing > Change plan. Upgrades take effect immediately, and you are charged a prorated amount for the rest of the billing period."},
+    {"article": "change-plan", "question": "When does a downgrade take effect?", "answer": "Downgrades take effect at the start of the next billing period, so you keep Pro features until then. On an annual plan, a downgrade takes effect when the annual period ends."},
+    {"article": "change-plan", "question": "What do I need to do before downgrading to Basic?", "answer": "Archive projects until no more than 3 are active, and remove members until no more than 5 remain. Only the Owner can change the plan."},
+
+    {"article": "annual-billing", "question": "How much is Pro if I pay yearly?", "answer": "Pro costs $250 per year on annual billing, the same as 10 months of monthly billing.", "twin": "a21"},
+    {"article": "annual-billing", "question": "What does Basic cost per year?", "answer": "Basic costs $100 per year on annual billing."},
+    {"article": "annual-billing", "question": "Do annual plans renew automatically?", "answer": "Yes. Annual plans renew automatically on the anniversary of the purchase date, and the Owner gets a reminder email 14 days before each renewal."},
+
+    {"article": "payment-methods", "question": "Which credit cards do you accept?", "answer": "We accept Visa, Mastercard, and American Express."},
+    {"article": "payment-methods", "question": "Do you accept PayPal or crypto?", "answer": "No. We do not accept PayPal or cryptocurrency.", "twin": "a06"},
+    {"article": "payment-methods", "question": "Can we pay by bank transfer?", "answer": "Yes, if your organization is on an annual plan. Ask for invoice payment through live chat before your first annual payment."},
+
+    {"article": "invoices", "question": "Where can I download my invoices?", "answer": "All invoices are under Settings > Billing > Invoices, where you can download each one as a PDF."},
+    {"article": "invoices", "question": "How do I add our VAT number to invoices?", "answer": "Edit Settings > Billing > Invoice details. The change applies to invoices issued after you save it."},
+    {"article": "invoices", "question": "Can you fix the address on an old invoice?", "answer": "Past invoices can't be edited. Email billing@example.com if one needs to be reissued with corrected details."},
+
+    {"article": "billing", "question": "Who do I contact about a billing problem?", "answer": "Contact our accounting department at billing@example.com."},
+    {"article": "billing", "question": "What's the email address for billing questions?", "answer": "Billing issues can be resolved by contacting our accounting department at billing@example.com."},
+
+    {"article": "failed-payments", "question": "My card was declined. What happens now?", "answer": "We retry the card 3 times over 7 days and email the account owner after each attempt. If every retry fails, the organization becomes read-only until the payment method is updated.", "twin": "a07"},
+    {"article": "failed-payments", "question": "Is my data deleted if a payment fails?", "answer": "No. No data is deleted while an organization is read-only. Update the payment method under Settings > Billing > Payment method to unlock it."},
+    {"article": "failed-payments", "question": "What can members do while the organization is read-only?", "answer": "They can sign in and view everything, but nobody can create or edit tasks."},
+
+    {"article": "refunds", "question": "Can I get a refund?", "answer": "Yes. Customers can request a refund within 30 days of purchase.", "twin": "a04"},
+    {"article": "refunds", "question": "Where does a refund go?", "answer": "Approved refunds are returned to the original payment method."},
+
+    {"article": "cancel", "question": "How do I cancel my subscription?", "answer": "Go to Settings > Billing > Cancel. Your plan stays active until the end of the current billing period."},
+    {"article": "cancel", "question": "Does my plan stop immediately when I cancel?", "answer": "No. Your plan stays active until the end of the current billing period."},
+
+    {"article": "data-retention", "question": "What happens to my data when my plan ends?", "answer": "Your data is kept for 90 days. After 90 days, all projects, tasks, and files are permanently deleted.", "twin": "a08"},
+    {"article": "data-retention", "question": "Can I still export after my plan ends?", "answer": "Yes. For 90 days after your plan ends, you can still sign in, export your data, and reactivate your subscription.", "twin": "a22"},
+    {"article": "data-retention", "question": "Can I reactivate my old account?", "answer": "Yes, within 90 days after your plan ends. Reactivate from Settings > Billing, and everything will be exactly as you left it."},
+
+    {"article": "delete-organization", "question": "How do I delete our organization?", "answer": "The account owner can delete it from Settings > Organization > Delete organization. Deletion is permanent and is completed within 24 hours."},
+    {"article": "delete-organization", "question": "Does deleting the organization cancel the subscription?", "answer": "Yes. An active subscription is cancelled automatically when the organization is deleted."},
+
+    {"article": "password", "question": "I forgot my password. What do I do?", "answer": "Click 'Forgot Password' on the login page. The reset link expires after 1 hour."},
+    {"article": "password", "question": "When does the password reset email link expire?", "answer": "The reset link expires after 1 hour.", "twin": "a01"},
+
+    {"article": "two-factor", "question": "How do I turn on two-factor authentication?", "answer": "Enable it under Settings > Security. We support authenticator apps."},
+    {"article": "two-factor", "question": "Can I get two-factor codes by SMS?", "answer": "No. SMS codes are not supported; use an authenticator app."},
+
+    {"article": "sso", "question": "Which plans include SSO?", "answer": "Single sign-on is available on the Pro plan. SSO is not available on the Basic plan.", "twin": "a10"},
+    {"article": "sso", "question": "Which identity providers work with your SSO?", "answer": "Any SAML 2.0 identity provider, such as Okta or Microsoft Entra ID. Configure it under Settings > Security > SSO."},
+    {"article": "sso", "question": "Can the Owner still use a password when SSO is enforced?", "answer": "Yes. The Owner can always sign in with a password, so a misconfigured identity provider can't lock everyone out."},
+
+    {"article": "change-email", "question": "How do I change my login email?", "answer": "Go to Profile > Account > Email. We send a confirmation link to the new address, and the change takes effect only after you click it."},
+    {"article": "change-email", "question": "How long is the email confirmation link valid?", "answer": "The confirmation link expires after 24 hours. If it expires, start the change again."},
+
+    {"article": "locked-account", "question": "Why is my account locked?", "answer": "After 10 failed sign-in attempts in a row, an account is locked for 30 minutes. Wait, or reset your password to unlock it immediately.", "twin": "a09"},
+    {"article": "locked-account", "question": "Can support unlock my account?", "answer": "No. Support can't unlock accounts manually. Wait 30 minutes or reset your password."},
+
+    {"article": "invite-members", "question": "What is the member limit on Basic?", "answer": "The Basic plan includes up to 5 members. The Pro plan has no member limit.", "twin": "a11"},
+    {"article": "invite-members", "question": "When do invitations expire?", "answer": "Invitations expire after 7 days. You can resend an expired invitation from Settings > Members > Invite.", "twin": "a24"},
+    {"article": "invite-members", "question": "How do I invite a coworker?", "answer": "Go to Settings > Members > Invite, enter their email address, and choose a role."},
+
+    {"article": "guests", "question": "Can I give a client access to one project?", "answer": "Yes. Invite them as a guest from the project's Members tab. Guests can view the project, comment, and edit tasks assigned to them."},
+    {"article": "guests", "question": "Do guests count toward the member limit?", "answer": "No. Guests don't count toward your plan's member limit."},
+
+    {"article": "roles", "question": "What roles can members have?", "answer": "Every member is an Owner, Admin, or Member. Each organization has exactly one Owner."},
+    {"article": "roles", "question": "Who can delete our organization?", "answer": "Only the Owner can delete the organization.", "twin": "a12"},
+    {"article": "roles", "question": "What can Admins do?", "answer": "Admins can invite and remove members and change project settings."},
+
+    {"article": "transfer-ownership", "question": "How do I make someone else the Owner?", "answer": "The current Owner can transfer ownership from Settings > Organization > Transfer ownership. The new Owner must already be an Admin."},
+    {"article": "transfer-ownership", "question": "What happens to the old Owner after a transfer?", "answer": "The previous Owner becomes an Admin, and billing emails go to the new Owner."},
+
+    {"article": "remove-member", "question": "What happens to a removed member's tasks?", "answer": "The work they created stays in its projects, and tasks assigned to them become unassigned."},
+    {"article": "remove-member", "question": "How do I remove someone from the organization?", "answer": "An Admin can remove a member from Settings > Members. The member loses access immediately."},
+
+    {"article": "tasks", "question": "How do I create a task quickly?", "answer": "Press N, or use the New Task button in any project."},
+    {"article": "tasks", "question": "How many custom statuses can a project have?", "answer": "Admins can add up to 10 custom statuses per project."},
+    {"article": "tasks", "question": "When is a task with subtasks shown as complete?", "answer": "Only when all its subtasks are done."},
+
+    {"article": "due-dates", "question": "When do I get reminded about a task that's due?", "answer": "The assignee gets a reminder email the morning a task is due."},
+    {"article": "due-dates", "question": "Which time zone do due dates use?", "answer": "Due dates use the time zone set in your profile."},
+
+    {"article": "recurring-tasks", "question": "Can tasks repeat every week?", "answer": "Yes. Choose Repeat from the task's due date menu; tasks can repeat daily, weekly, monthly, or on a custom schedule."},
+    {"article": "recurring-tasks", "question": "Are comments copied to the next recurring task?", "answer": "No. Comments and attachments are not copied to the next task."},
+
+    {"article": "comments", "question": "How do I mention a teammate?", "answer": "Type @ followed by their name in a comment. They get a notification."},
+    {"article": "comments", "question": "How long can I edit my comment?", "answer": "You can edit or delete your own comments for 24 hours after posting them."},
+
+    {"article": "search", "question": "Does search look inside PDF attachments?", "answer": "No. Text inside attached files is not searched; search covers task titles, descriptions, comments, and attached file names."},
+    {"article": "search", "question": "How do I open search?", "answer": "Press / from anywhere in the app."},
+
+    {"article": "labels", "question": "Are labels shared between projects?", "answer": "No. Labels belong to a project, so each project has its own set."},
+
+    {"article": "templates", "question": "What does a project template include?", "answer": "A template keeps the project's statuses, labels, and tasks, but not its members, comments, or attachments."},
+    {"article": "templates", "question": "How do I save a project as a template?", "answer": "Open the project's Settings tab and choose Save as template."},
+
+    {"article": "reports", "question": "Is the Reports page on the Basic plan?", "answer": "No. Reports are available on the Pro plan."},
+    {"article": "reports", "question": "How often are reports updated?", "answer": "Reports are updated every hour."},
+
+    {"article": "archive-projects", "question": "Do archived projects count toward the project limit?", "answer": "No. Archived projects are read-only and don't count toward your plan's project limit."},
+    {"article": "archive-projects", "question": "Can I restore an archived project?", "answer": "Yes, at any time, from the Archived section of the project list."},
+
+    {"article": "trash", "question": "I deleted a task yesterday. Can I restore it?", "answer": "Yes. Deleted items stay in Trash for 30 days. Restore it from Trash in the sidebar.", "twin": "a16"},
+    {"article": "trash", "question": "How long do deleted items stay in Trash?", "answer": "Deleted tasks, files, and projects stay in Trash for 30 days."},
+    {"article": "trash", "question": "Who can restore a deleted project?", "answer": "Only Admins can restore a deleted project."},
+    {"article": "trash", "question": "Can support recover items deleted more than 30 days ago?", "answer": "No. After 30 days, items are permanently deleted and cannot be recovered, even by support."},
+
+    {"article": "file-uploads", "question": "What's the maximum attachment size on Pro?", "answer": "The maximum file size is 2 GB on Pro and 100 MB on Basic.", "twin": "a13"},
+    {"article": "file-uploads", "question": "How much storage does Basic include?", "answer": "Each organization gets 10 GB of storage on Basic and 1 TB on Pro."},
+    {"article": "file-uploads", "question": "What happens when we run out of storage?", "answer": "New uploads are blocked until files are deleted or the plan is upgraded."},
+
+    {"article": "export", "question": "How do I export my data?", "answer": "Export your data as CSV from Settings > Data > Export. Exports include all projects and are emailed to the account owner.", "twin": "a03"},
+    {"article": "export", "question": "Who receives the data export?", "answer": "Exports are emailed to the account owner."},
+
+    {"article": "import", "question": "Can I import tasks from a CSV file?", "answer": "Yes. Import tasks from a CSV file under Settings > Data > Import. The file needs a header row with at least a Title column.", "twin": "a23"},
+    {"article": "import", "question": "How many rows can one import have?", "answer": "Each import is limited to 10,000 rows."},
+    {"article": "import", "question": "Can I import directly from another project-management tool?", "answer": "No. Direct imports from other project-management tools are not supported; use a CSV file."},
+
+    {"article": "api-keys", "question": "Where do I create an API key?", "answer": "Under Settings > Developer > API keys."},
+    {"article": "api-keys", "question": "Do API keys expire?", "answer": "No. A key works until it is revoked, or until the member who created it is removed from the organization."},
+
+    {"article": "rate-limits", "question": "What is the API rate limit on Pro?", "answer": "1,000 requests per minute per key on Pro, and 100 per minute per key on Basic.", "twin": "a14"},
+    {"article": "rate-limits", "question": "What happens if I go over the rate limit?", "answer": "Requests over the limit receive HTTP status 429 with a Retry-After header that gives the number of seconds to wait."},
+
+    {"article": "webhooks", "question": "How are webhooks signed?", "answer": "Each request is signed with HMAC-SHA256 using your webhook secret, and the signature is sent in the X-Signature header.", "twin": "a15"},
+    {"article": "webhooks", "question": "What if my webhook endpoint is down?", "answer": "Failed deliveries are retried up to 5 times over 24 hours, after which the webhook is paused and the Owner is notified by email."},
+
+    {"article": "integrations", "question": "Which tools do you integrate with?", "answer": "Slack, Google Drive, and GitHub. Connect them under Settings > Integrations."},
+    {"article": "integrations", "question": "How does the GitHub integration link pull requests?", "answer": "GitHub links a pull request to a task when the task ID appears in the branch name, and the task moves to Done when the pull request is merged.", "twin": "a20"},
+
+    {"article": "notifications", "question": "Can I get one summary email per day?", "answer": "Yes. Under Profile > Notifications you can switch to a daily summary sent at 8:00 in your time zone."},
+
+    {"article": "mobile-apps", "question": "Do you have an iPhone app?", "answer": "Yes. Our iOS and Android apps are free on both plans.", "twin": "a17"},
+    {"article": "mobile-apps", "question": "Can I change billing in the mobile app?", "answer": "No. Project settings, billing, and imports are only available on the web."},
+
+    {"article": "offline", "question": "Does the app work offline?", "answer": "The web app needs an internet connection. The mobile apps let you read and edit recent projects offline, and changes sync when you reconnect."},
+
+    {"article": "browsers", "question": "Which browsers are supported?", "answer": "The latest two versions of Chrome, Firefox, Safari, and Edge. Internet Explorer is not supported."},
+
+    {"article": "profile", "question": "Which languages is the app available in?", "answer": "English, German, French, and Spanish."},
+    {"article": "profile", "question": "Where do I change my time zone?", "answer": "Under Profile > Account."},
+
+    {"article": "data-location", "question": "Can I change my organization's data region?", "answer": "No. You choose the region when you create the organization, and it can't be changed later. To use a different region, create a new organization there and move your data with an export and an import.", "twin": "a18"},
+    {"article": "data-location", "question": "Where is our data stored?", "answer": "In the European Union (Frankfurt) or the United States (Virginia), depending on the region chosen when the organization was created."},
+
+    {"article": "security", "question": "Is my data encrypted?", "answer": "Yes. Data is encrypted in transit with TLS 1.2 or later and at rest with AES-256."},
+    {"article": "security", "question": "Can I get your security audit report?", "answer": "Pro customers can request the latest report through live chat."},
+
+    {"article": "status", "question": "When is your maintenance window?", "answer": "Scheduled maintenance takes place on Sundays between 02:00 and 04:00 UTC and is announced at least 48 hours in advance.", "twin": "a19"},
+    {"article": "status", "question": "Where can I check if the service is down?", "answer": "Check status.example.com for current incidents and scheduled maintenance."},
+
+    {"article": "shortcuts", "question": "How do I see all keyboard shortcuts?", "answer": "Press ? anywhere in the app."},
+
+    {"article": "support-hours", "question": "When is support available?", "answer": "Our support team is available 24/7 via live chat."},
+    {"article": "support-hours", "question": "How do I reach support?", "answer": "Through live chat, 24/7."},
+
+    {"decline": true, "question": "Do you have an office I can visit?"},
+    {"decline": true, "question": "Is there a referral program?"},
+    {"decline": true, "question": "Can I white-label the app with my own logo?"},
+    {"decline": true, "question": "Do you have Gantt charts?"},
+    {"decline": true, "question": "Is there built-in time tracking?"},
+    {"decline": true, "question": "Can I make video calls inside the app?"},
+    {"decline": true, "question": "Is there an official Python SDK for the API?"},
+    {"decline": true, "question": "Can I use my own domain for the app?"}
+  ],
+  "valid": [
+    {"article": "plans", "question": "What's the price of the Basic plan per month?", "answer": "The Basic plan costs $10 per month and includes 3 projects."},
+    {"article": "invite-members", "question": "Is there a limit on members for Pro?", "answer": "No. The Pro plan has no member limit."},
+    {"article": "trash", "question": "How long does Trash keep files?", "answer": "Deleted files stay in Trash for 30 days."},
+    {"article": "webhooks", "question": "Where do I set up webhooks?", "answer": "Under Settings > Developer > Webhooks."},
+    {"article": "invoices", "question": "Can I edit a past invoice?", "answer": "No. Past invoices can't be edited. Email billing@example.com if one needs to be reissued."},
+    {"article": "browsers", "question": "Is Internet Explorer supported?", "answer": "No. Internet Explorer is not supported."},
+    {"article": "sso", "question": "Do you support SAML?", "answer": "Yes. Pro organizations can enable single sign-on with any SAML 2.0 identity provider."},
+    {"article": "failed-payments", "question": "How many times do you retry a failed payment?", "answer": "We retry the card 3 times over 7 days."},
+    {"article": "annual-billing", "question": "Can I pay for Basic annually?", "answer": "Yes. Basic costs $100 per year on annual billing."},
+    {"article": "archive-projects", "question": "Does archiving delete anything?", "answer": "No. Archiving keeps everything, including comments and files, and members keep read access."},
+    {"article": "rate-limits", "question": "What does a 429 response from the API mean?", "answer": "You went over the rate limit. Wait the number of seconds in the Retry-After header."},
+    {"decline": true, "question": "Can I schedule a demo call with sales?"}
+  ]
+}
