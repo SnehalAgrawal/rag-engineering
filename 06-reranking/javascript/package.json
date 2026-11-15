@@ -1,0 +1,13 @@
+{
+  "name": "reranking",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A second-stage reranker (a chat model scoring each candidate) on top of vector and hybrid retrieval. Companion to Article #17 on snehalagrawal.com.",
+  "scripts": {
+    "evaluate": "node evaluate.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

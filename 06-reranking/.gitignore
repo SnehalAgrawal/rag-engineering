@@ -1,0 +1,6 @@
+# The Llama 3.2 tokenizer (17 MB); see the README: Get the tokenizer
+data/tokenizer.json
+
+# Saved runs (regenerate with evaluate.* / answer.*)
+results-retrieval.json
+results-rerank.json

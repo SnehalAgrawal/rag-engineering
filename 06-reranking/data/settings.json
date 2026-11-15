@@ -1,0 +1,24 @@
+{
+  "_comment": "Every setting of the experiment, written before any reranking run. Documents, chunks, questions, and splits are 05-hybrid-search's, unchanged. The first stage finds candidates; the reranker reorders only those candidates; the budget is filled from the reranked order, and chunks outside the candidate set are never used. Scores are kept per (question, chunk) pair: a pair's score doesn't depend on which first stage proposed it, and each pair is scored once per run.",
+  "chunking": {"name": "structure-headings", "kind": "structure", "max_tokens": 512, "headings": true},
+  "embedding": {"document_prefix": "search_document: ", "query_prefix": "search_query: ", "batch_size": 32},
+  "first_stages": {
+    "vector": "cosine similarity, every chunk ranked (as in 05)",
+    "rrf": "reciprocal rank fusion of vector and BM25 (words analyzer, k1 1.2, b 0.75), k = 60 (as in 05)"
+  },
+  "bm25": {"k1": 1.2, "b": 0.75, "analyzer": "words"},
+  "rrf": {"k": 60},
+  "candidates": [10, 20],
+  "budgets": [500, 1000, 2000],
+  "primary_budget": 1000,
+  "reranker": {
+    "model": "llama3.2:3b",
+    "options": {"temperature": 0, "seed": 1, "num_predict": 1},
+    "top_logprobs": 20,
+    "yes": ["Yes", "yes", "YES", " Yes", " yes"],
+    "no": ["No", "no", "NO", " No", " no"],
+    "score": "log-odds at the first output position: logsumexp of the log-probabilities of the 'yes' tokens minus logsumexp of the 'no' tokens, among the top_logprobs alternatives. A label with no token among them gets the lowest listed log-probability (an upper bound for it). It is a model-derived relevance score, not a calibrated probability.",
+    "order": "candidates by score, highest first; ties by first-stage rank"
+  },
+  "repeat_check": {"pairs": 250, "seed": 7, "note": "after the full run, a seeded random sample of scored pairs is scored again (Python) and compared"}
+}

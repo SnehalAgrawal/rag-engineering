@@ -1,0 +1,6 @@
+{
+  "_comment": "The reranker prompt. Both languages read this file, so they send identical requests. The model reads the question and one passage together and answers Yes or No; only the log-probabilities of its first token are used.",
+  "version": "rerank-v1",
+  "system": "You judge whether a passage from a product's documentation answers a customer's question. Reply with one word: Yes or No.",
+  "user": "Question: {question}\n\nPassage:\n{passage}\n\nDoes this passage answer the question? Reply Yes or No."
+}
