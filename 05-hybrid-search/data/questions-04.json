@@ -1,0 +1,1185 @@
+{
+  "_comment": "Questions about the five documents in documents/, written after the documents were frozen and before any chunker existed. 'evidence' lists one or more alternatives; each alternative is the set of passages that together answer the question, copied exactly from the documents (each passage occurs exactly once in them). A table row comes with its header row, a procedure with all its steps, a release note with its version heading. Scoring rule, fixed with the questions: a question's evidence is found when, for at least one alternative, every passage is contained in the text of a single retrieved chunk, as the model receives it, including heading lines a strategy copies into the chunk (different passages may be in different chunks). 'answer' is the reference for grading replies by hand. 'category': simple (one sentence), heading (the answer is in the section heading), table, list (steps or items), multi (two places, often a cross-reference). 'split': alternating within each category in the order written, starting with dev; dev questions choose settings, test questions report results.",
+  "questions": [
+    {
+      "id": "q01",
+      "split": "dev",
+      "category": "simple",
+      "question": "How often can we change the organization's web address?",
+      "answer": "Once every 30 days; old links redirect for 90 days.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "The address can be changed once every 30 days."
+          }
+        ],
+        [
+          {
+            "document": "release-notes.md",
+            "text": "Organization web addresses can now be changed once every 30 days"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q02",
+      "split": "test",
+      "category": "simple",
+      "question": "How many email addresses can I invite at once?",
+      "answer": "Up to 50 at once, all with one role.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "You can paste up to 50 email addresses at once"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q03",
+      "split": "dev",
+      "category": "simple",
+      "question": "Do suspended members count toward the member limit?",
+      "answer": "Yes.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "Suspended members still count toward the member limit."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q04",
+      "split": "test",
+      "category": "simple",
+      "question": "How long is a SCIM token valid?",
+      "answer": "One year.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "SCIM tokens are valid for one year."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q05",
+      "split": "dev",
+      "category": "simple",
+      "question": "How quickly is someone removed after our identity provider deactivates them?",
+      "answer": "Within 5 minutes.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "the member is removed from the organization within 5 minutes"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q06",
+      "split": "test",
+      "category": "simple",
+      "question": "Can the Owner delete entries from the audit log?",
+      "answer": "No; audit log entries can't be edited or deleted, not even by the Owner.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "Audit log entries can't be edited or deleted, not even by the Owner."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q07",
+      "split": "dev",
+      "category": "simple",
+      "question": "How long does it take for a revoked API key to stop working?",
+      "answer": "Within one minute.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "revocation takes effect within one minute"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q08",
+      "split": "test",
+      "category": "simple",
+      "question": "How many API keys can one member have?",
+      "answer": "Up to 10 active keys.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "Each member can have up to 10 active keys."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q09",
+      "split": "dev",
+      "category": "simple",
+      "question": "How long is an API pagination cursor valid?",
+      "answer": "24 hours after it is issued.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "Cursors expire 24 hours after they are issued"
+          }
+        ],
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| 400 | cursor_expired | The pagination cursor is more than 24 hours old |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q10",
+      "split": "test",
+      "category": "simple",
+      "question": "How long does the API remember an idempotency key?",
+      "answer": "24 hours.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "If a request with the same key and the same body arrives again within 24 hours"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q11",
+      "split": "dev",
+      "category": "simple",
+      "question": "How often are backups made?",
+      "answer": "Every 6 hours.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "They are made every 6 hours."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q12",
+      "split": "test",
+      "category": "simple",
+      "question": "How long are server logs kept?",
+      "answer": "30 days.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "Server logs, which contain IP addresses and request paths but not the content of customer data, are kept for 30 days."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q13",
+      "split": "dev",
+      "category": "simple",
+      "question": "How long do you keep our invoices and payment records?",
+      "answer": "10 years, because tax law requires it, even after the organization is deleted.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "Invoices and payment records are kept for 10 years"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q14",
+      "split": "test",
+      "category": "simple",
+      "question": "Do you use our data to train machine learning models?",
+      "answer": "No.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "We don't use customer data to train machine learning models"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q15",
+      "split": "dev",
+      "category": "simple",
+      "question": "How many billing contacts can we add?",
+      "answer": "Up to 3.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "You can add up to 3 billing contacts."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q16",
+      "split": "test",
+      "category": "simple",
+      "question": "How long is the link in an export email valid?",
+      "answer": "7 days.",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "Exports are now emailed to the Owner as a download link, valid for 7 days"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q17",
+      "split": "dev",
+      "category": "simple",
+      "question": "If a subprocessor change makes us cancel after the 30-day refund period, do we get a refund?",
+      "answer": "Yes, for the unused part of the current billing period, if the objection can't be resolved.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "receive a refund for the unused part of the current billing period, even if the 30-day refund period"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q18",
+      "split": "test",
+      "category": "simple",
+      "question": "Can the Owner still sign in if SSO is enforced and our identity provider is down?",
+      "answer": "Yes, the Owner can always sign in with a password.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "The Owner can always sign in with a password, even when SSO is enforced"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q19",
+      "split": "dev",
+      "category": "simple",
+      "question": "How much does it cost to upgrade from monthly Basic to Pro halfway through the month?",
+      "answer": "Half the price difference: $7.50, then $25 from the next billing date.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "(25 - 10) / 2 = $7.50"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q20",
+      "split": "test",
+      "category": "simple",
+      "question": "Is the audit log kept when we downgrade to Basic?",
+      "answer": "Yes, but it stops recording new events and is visible again only after upgrading.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "The audit log is kept, but it stops recording new events"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q21",
+      "split": "dev",
+      "category": "simple",
+      "question": "What happens if our SSO certificate expires before we replace it?",
+      "answer": "SSO sign-in fails for everyone; only the Owner can sign in, with a password.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "If a certificate expires before it is replaced, SSO sign-in fails for everyone"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q22",
+      "split": "dev",
+      "category": "heading",
+      "question": "Which version raised the custom status limit to 10?",
+      "answer": "Version 6.3 (2026-10-06).",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 6.3 (2026-10-06)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "The limit on custom statuses was raised from 6 to 10 per project."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q23",
+      "split": "test",
+      "category": "heading",
+      "question": "When did SCIM provisioning become available?",
+      "answer": "Version 6.1, 2026-08-18.",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 6.1 (2026-08-18)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "SCIM provisioning for Pro organizations that use single sign-on."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q24",
+      "split": "dev",
+      "category": "heading",
+      "question": "When was the Pro file size limit raised to 2 GB?",
+      "answer": "Version 5.8, 2026-05-12.",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 5.8 (2026-05-12)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "The maximum file size on the Pro plan was raised from 1 GB to 2 GB."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q25",
+      "split": "test",
+      "category": "heading",
+      "question": "In which release was Spanish added?",
+      "answer": "Version 5.5 (2026-02-09).",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 5.5 (2026-02-09)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "The app is now available in Spanish"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q26",
+      "split": "dev",
+      "category": "heading",
+      "question": "In which version were SMS codes for two-factor authentication removed?",
+      "answer": "Version 5.4 (2026-01-12).",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 5.4 (2026-01-12)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "SMS codes for two-factor authentication are no longer accepted."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q27",
+      "split": "test",
+      "category": "heading",
+      "question": "Which version added the IP allowlist?",
+      "answer": "Version 6.2 (2026-09-15).",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 6.2 (2026-09-15)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "IP allowlist for Pro organizations."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q28",
+      "split": "dev",
+      "category": "heading",
+      "question": "When did it become possible to suspend members?",
+      "answer": "Version 5.6, 2026-03-10.",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 5.6 (2026-03-10)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "Members can be suspended instead of removed"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q29",
+      "split": "test",
+      "category": "heading",
+      "question": "When was the maximum API page size raised to 200?",
+      "answer": "Version 6.2, 2026-09-15.",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 6.2 (2026-09-15)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "The maximum page size in the API was raised from 100 to 200."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q30",
+      "split": "dev",
+      "category": "heading",
+      "question": "In which version did webhook retries change to 5 times over 24 hours?",
+      "answer": "Version 5.9 (2026-06-01).",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 5.9 (2026-06-01)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "Failed webhook deliveries are now retried up to 5 times over 24 hours"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q31",
+      "split": "test",
+      "category": "heading",
+      "question": "When could Admins first set the session length?",
+      "answer": "Version 6.0, 2026-07-07.",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 6.0 (2026-07-07)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "Admins can set how long members stay signed in, from 1 to 90 days."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q32",
+      "split": "dev",
+      "category": "heading",
+      "question": "When did allowed email domains become available?",
+      "answer": "Version 5.7, 2026-04-14.",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 5.7 (2026-04-14)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "Allowed email domains: people with a verified address"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q33",
+      "split": "test",
+      "category": "heading",
+      "question": "Which version added support for a second SSO signing certificate?",
+      "answer": "Version 6.4 (2026-10-27).",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 6.4 (2026-10-27)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "Add a second signing certificate for single sign-on"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q34",
+      "split": "dev",
+      "category": "heading",
+      "question": "When did bank transfer payments for annual plans become available?",
+      "answer": "Version 5.2, 2025-11-03.",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 5.2 (2025-11-03)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "Bank transfer payments for annual plans, on request through live chat."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q35",
+      "split": "dev",
+      "category": "table",
+      "question": "How many guests can each project have on the Basic plan?",
+      "answer": "10.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "| | Basic | Pro |"
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "| Guests per project | 10 | Unlimited |"
+          }
+        ],
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "The Basic plan is meant for small teams"
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "each project can have up to 10 guests"
+          }
+        ],
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "Before you can downgrade to Basic"
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "Remove guests from any project that has more than 10."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q36",
+      "split": "test",
+      "category": "table",
+      "question": "Can a Member restore a deleted project?",
+      "answer": "No; only the Owner and Admins can.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "| Capability | Owner | Admin | Member | Guest |"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "| Restore a deleted project | Yes | Yes | No | No |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q37",
+      "split": "dev",
+      "category": "table",
+      "question": "Who can view the audit log?",
+      "answer": "The Owner and Admins (on the Pro plan).",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "| Capability | Owner | Admin | Member | Guest |"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "| View the audit log | Yes | Yes | No | No |"
+          }
+        ],
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "It is available on the Pro plan, to the Owner and Admins"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q38",
+      "split": "test",
+      "category": "table",
+      "question": "Can Members change project settings?",
+      "answer": "Only in projects they created.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "| Capability | Owner | Admin | Member | Guest |"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "| Change project settings | Yes | Yes | Only in projects they created | No |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q39",
+      "split": "dev",
+      "category": "table",
+      "question": "What does SSO error SSO-103 mean, and how do I fix it?",
+      "answer": "The email address doesn't match any member; invite the person or check the NameID format.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "| Error code | Meaning | What to do |"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "| SSO-103 | The email address doesn't match any member | Invite the person, or check the NameID format (step 3) |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q40",
+      "split": "test",
+      "category": "table",
+      "question": "What does HTTP status 423 from the API mean?",
+      "answer": "The organization is read-only (error code organization_read_only), for example after a failed payment.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Status | Code | Meaning |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| 423 | organization_read_only | The organization is read-only, for example after a failed payment |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q41",
+      "split": "dev",
+      "category": "table",
+      "question": "When is the second retry of a failed card payment?",
+      "answer": "3 days after the failed payment.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "| Attempt | When |"
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "| Second retry | 3 days after the failed payment |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q42",
+      "split": "test",
+      "category": "table",
+      "question": "How long after the first attempt is the third webhook retry sent?",
+      "answer": "1 hour.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Retry | Time after the first attempt |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| 3 | 1 hour |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q43",
+      "split": "dev",
+      "category": "table",
+      "question": "What does the X-RateLimit-Reset header mean?",
+      "answer": "Seconds until the rate-limit window has room for another request.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Header | Meaning |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| X-RateLimit-Reset | Seconds until the window has room for another request |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q44",
+      "split": "test",
+      "category": "table",
+      "question": "Where is the live chat subprocessor located?",
+      "answer": "In the European Union.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "| Category | Purpose | Location |"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "| Live chat | Support conversations | European Union |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q45",
+      "split": "dev",
+      "category": "table",
+      "question": "What is the maximum length of a task description in the API?",
+      "answer": "50,000 characters, in Markdown.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Field | Type | Notes |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| description | string | Up to 50,000 characters, in Markdown |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q46",
+      "split": "test",
+      "category": "table",
+      "question": "How much storage does a Pro organization get?",
+      "answer": "1 TB.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "| | Basic | Pro |"
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "| Storage per organization | 10 GB | 1 TB |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q47",
+      "split": "dev",
+      "category": "table",
+      "question": "Which webhook event is sent when a task is marked done?",
+      "answer": "task.completed.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Event | Sent when |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| task.completed | A task moves to a status in the Done group |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q48",
+      "split": "test",
+      "category": "table",
+      "question": "What is the API rate limit per key on the Pro plan?",
+      "answer": "1,000 requests per minute, per key.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Plan | Requests per minute, per key |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| Pro | 1,000 |"
+          }
+        ],
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "| | Basic | Pro |"
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "| API requests per minute, per key | 100 | 1,000 |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q49",
+      "split": "dev",
+      "category": "list",
+      "question": "How do I set up single sign-on?",
+      "answer": "The 8 steps in section 4.2 of the Administrator Guide.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "1. Go to Settings > Security > SSO and select Set up SAML."
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "2. In your identity provider, create a new SAML application."
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "3. Configure the identity provider to send the email address as the NameID"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "4. Assign the application to the people and groups"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "5. Copy the identity provider's metadata URL"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "6. Select Test connection."
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "7. When the test succeeds, choose whether to enforce SSO."
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "8. If you enforce SSO, members who haven't signed in through SSO yet get a grace period of 7 days"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q50",
+      "split": "test",
+      "category": "list",
+      "question": "How do I connect SCIM provisioning?",
+      "answer": "The 4 steps in section 5 of the Administrator Guide.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "1. Go to Settings > Security > SCIM and select Generate token."
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "2. In your identity provider's SAML application, turn on SCIM provisioning."
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "3. Choose which provisioning actions to allow"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "4. Assign a test user and check that they appear under Settings > Members"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q51",
+      "split": "dev",
+      "category": "list",
+      "question": "How do I verify a webhook delivery?",
+      "answer": "The 5 steps under Verifying a webhook.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "1. Read the raw request body, exactly as received"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "2. Join the X-Timestamp value, a period, and the raw body into one string."
+          },
+          {
+            "document": "api-reference.md",
+            "text": "3. Compute an HMAC-SHA256 of that string"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "4. Compare the result with the X-Signature header using a constant-time comparison."
+          },
+          {
+            "document": "api-reference.md",
+            "text": "5. Check that X-Timestamp is no more than 5 minutes old."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q52",
+      "split": "test",
+      "category": "list",
+      "question": "What do we have to do before we can downgrade to Basic?",
+      "answer": "The 5 steps in the Downgrading section.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "1. Archive projects until no more than 3 are active."
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "2. Remove or suspend members until no more than 5 remain"
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "3. Remove guests from any project that has more than 10."
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "4. Delete files until storage is under 10 GB."
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "5. Turn off single sign-on, SCIM, and the IP allowlist."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q53",
+      "split": "dev",
+      "category": "list",
+      "question": "What will a breach notification tell us?",
+      "answer": "What happened and when; the data and people affected; likely consequences; containment measures; a contact person.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "1. what happened and when;"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "2. which categories of data and roughly how many people are affected;"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "3. the likely consequences;"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "4. what we have done and will do to contain the breach;"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "5. a contact person for further information."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q54",
+      "split": "test",
+      "category": "list",
+      "question": "What categories of data do you process?",
+      "answer": "Customer data, account data, usage data, and billing data.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "1. Customer data, as defined in section 1."
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "2. Account data: names, email addresses"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "3. Usage data: which features are used"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "4. Billing data: the billing address"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q55",
+      "split": "dev",
+      "category": "multi",
+      "question": "After we delete our organization, how long until our data is gone from backups too?",
+      "answer": "Deleted from the app within 24 hours; backups expire after up to 35 days.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "all customer data is deleted from the app within 24 hours"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "Each backup is kept for 35 days and then deleted."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q56",
+      "split": "test",
+      "category": "multi",
+      "question": "What error does the API return for write requests after all card payment retries have failed?",
+      "answer": "423 organization_read_only, because the organization becomes read-only.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "If the third retry also fails, the organization becomes read-only"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| 423 | organization_read_only |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q57",
+      "split": "dev",
+      "category": "multi",
+      "question": "Sign-in fails with SSO-101. How do I fix it?",
+      "answer": "Add the identity provider's current signing certificate under Settings > Security > SSO > Certificates.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "| SSO-101 | The response wasn't signed with an active certificate |"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "add it under Settings > Security > SSO > Certificates"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q58",
+      "split": "test",
+      "category": "multi",
+      "question": "How fast must a webhook endpoint respond, and what happens if the last retry fails?",
+      "answer": "With a 2xx within 10 seconds; after the last failed retry the webhook is paused and the Owner is emailed.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "Your endpoint must respond with a 2xx status within 10 seconds."
+          },
+          {
+            "document": "api-reference.md",
+            "text": "If the last retry fails, the webhook is paused and the Owner is notified by email."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q59",
+      "split": "dev",
+      "category": "multi",
+      "question": "How soon can we get written confirmation that our deleted organization's data is gone?",
+      "answer": "Within 10 business days of the request, but not before the backups have expired, which takes up to 35 days.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "We send the confirmation within 10 business days of the request, and not before the backups have expired."
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "Each backup is kept for 35 days and then deleted."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q60",
+      "split": "test",
+      "category": "multi",
+      "question": "When our identity provider deactivates someone, what happens to the tasks assigned to them?",
+      "answer": "They are removed within 5 minutes, as if removed by hand, so their tasks become unassigned.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "with the same effects as removing them by hand (section 3.3)"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "Their tasks become unassigned"
+          }
+        ]
+      ]
+    }
+  ]
+}

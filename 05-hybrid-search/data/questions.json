@@ -1,0 +1,713 @@
+{
+  "_comment": "New questions for comparing vector, keyword, and hybrid retrieval on the five documents from 04-chunking (copied unchanged into documents/). Written before any keyword-search code existed. 'category': identifier (the question is built around an exact string from the documents: an error code, header, field, URL, or version), paraphrase (the question shares at most one content word with its evidence), mixed (an exact string plus a concept in the question's own words). Evidence and scoring as in questions-04.json: each alternative is a set of passages copied exactly from the documents (each occurs exactly once); a question's evidence is found when, for at least one alternative, every passage is whole inside one retrieved chunk (different passages may be in different chunks). 'split': alternating within each category in the order written, starting with dev; dev questions choose settings (the fusion weight), test questions report results. questions-04.json holds the 60 questions from 04-chunking, unchanged, reported separately.",
+  "questions": [
+    {
+      "id": "r01",
+      "split": "dev",
+      "category": "identifier",
+      "question": "What does SSO-104 mean?",
+      "answer": "The Entity ID doesn't match; copy the Entity ID again from Settings > Security > SSO.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "| Error code | Meaning | What to do |"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "| SSO-104 | The Entity ID doesn't match |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r02",
+      "split": "test",
+      "category": "identifier",
+      "question": "The API returned cursor_expired. What happened?",
+      "answer": "The pagination cursor is more than 24 hours old; start again from the first page.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Status | Code | Meaning |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| 400 | cursor_expired | The pagination cursor is more than 24 hours old |"
+          }
+        ],
+        [
+          {
+            "document": "api-reference.md",
+            "text": "a request with an expired cursor receives 400 with the error code cursor_expired"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r03",
+      "split": "dev",
+      "category": "identifier",
+      "question": "What is idempotency_mismatch?",
+      "answer": "A 409 error: the idempotency key was already used with a different body.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Status | Code | Meaning |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| 409 | idempotency_mismatch | The idempotency key was already used with a different body |"
+          }
+        ],
+        [
+          {
+            "document": "api-reference.md",
+            "text": "Reusing a key with a different body receives 409 with the code idempotency_mismatch."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r04",
+      "split": "test",
+      "category": "identifier",
+      "question": "What does the X-RateLimit-Remaining header contain?",
+      "answer": "How many requests are left in the current rate-limit window.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Header | Meaning |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| X-RateLimit-Remaining | How many requests are left in the current window |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r05",
+      "split": "dev",
+      "category": "identifier",
+      "question": "What is the Idempotency-Key header for?",
+      "answer": "Retrying POST requests safely: a repeat with the same key and body within 24 hours returns the original response.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "To retry safely, send an Idempotency-Key header with a unique value"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r06",
+      "split": "test",
+      "category": "identifier",
+      "question": "What does SSO-102 mean?",
+      "answer": "The SAML response is older than 5 minutes; check the identity provider's clock.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "| Error code | Meaning | What to do |"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "| SSO-102 | The response is older than 5 minutes |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r07",
+      "split": "dev",
+      "category": "identifier",
+      "question": "What was fixed in version 6.0?",
+      "answer": "Due dates entered on mobile were saved in the device's time zone instead of the profile's.",
+      "evidence": [
+        [
+          {
+            "document": "release-notes.md",
+            "text": "## Version 6.0 (2026-07-07)"
+          },
+          {
+            "document": "release-notes.md",
+            "text": "Due dates entered on mobile were saved in the device's time zone"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r08",
+      "split": "test",
+      "category": "identifier",
+      "question": "When is the task.deleted event sent?",
+      "answer": "When a task is moved to Trash.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Event | Sent when |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| task.deleted | A task is moved to Trash |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r09",
+      "split": "dev",
+      "category": "identifier",
+      "question": "What is https://api.example.com/scim/v2 used for?",
+      "answer": "It is the base URL for SCIM provisioning, entered in the identity provider with the SCIM token.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "turn on SCIM provisioning. Use the base URL https://api.example.com/scim/v2"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r10",
+      "split": "test",
+      "category": "identifier",
+      "question": "What does a 503 with the code maintenance mean?",
+      "answer": "Scheduled maintenance; retry after the time in Retry-After.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Status | Code | Meaning |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| 503 | maintenance | Scheduled maintenance; retry after the time in Retry-After |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r11",
+      "split": "dev",
+      "category": "identifier",
+      "question": "What is https://app.example.com/sso/acs?",
+      "answer": "The Assertion Consumer Service (ACS) URL to paste into the identity provider when setting up SAML.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "the Assertion Consumer Service (ACS) URL, https://app.example.com/sso/acs"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r12",
+      "split": "test",
+      "category": "identifier",
+      "question": "What does parent_id do on a task?",
+      "answer": "It makes the task a subtask of another task in the same project.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Field | Type | Notes |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| parent_id | string or null | Set to make the task a subtask of another task in the same project |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r13",
+      "split": "dev",
+      "category": "identifier",
+      "question": "What does include_completed=false do?",
+      "answer": "It leaves completed subtasks out of the task list.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "Completed subtasks are included unless you pass include_completed=false."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r14",
+      "split": "test",
+      "category": "identifier",
+      "question": "What is the X-Timestamp header on webhooks?",
+      "answer": "One of the two signature headers; it is signed with the body and must be no more than 5 minutes old.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "Each request has two headers: X-Signature and X-Timestamp."
+          },
+          {
+            "document": "api-reference.md",
+            "text": "5. Check that X-Timestamp is no more than 5 minutes old."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r15",
+      "split": "dev",
+      "category": "identifier",
+      "question": "What does a Sunset header in an API response tell me?",
+      "answer": "The date when a deprecated endpoint or version will stop working.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "a Sunset header with the date it will stop working"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r16",
+      "split": "dev",
+      "category": "paraphrase",
+      "question": "How do I stop people signing in from outside our office network?",
+      "answer": "Use the IP allowlist (Pro): limit sign-ins and API requests to a list of IP ranges under Settings > Security > IP allowlist.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "Admins can limit sign-ins and API requests to a list of IP address ranges"
+          }
+        ],
+        [
+          {
+            "document": "release-notes.md",
+            "text": "Admins can limit sign-ins and API requests to up to 50 IP address ranges."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r17",
+      "split": "test",
+      "category": "paraphrase",
+      "question": "A laptop was stolen. Can I force all our staff to log in again immediately?",
+      "answer": "Yes: Sign out all members under Settings > Security > Sessions.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "To sign everyone out now, for example after a suspected breach, use Sign out all members on the same page."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r18",
+      "split": "dev",
+      "category": "paraphrase",
+      "question": "Someone is taking a six-month sabbatical. Can I block them temporarily without them losing what they're responsible for?",
+      "answer": "Suspend them: they can't sign in, but keep their role, projects, and task assignments.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "Suspending is for people who will be away for a while"
+          },
+          {
+            "document": "admin-guide.md",
+            "text": "but they keep their role, their project memberships, and their task assignments"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r19",
+      "split": "test",
+      "category": "paraphrase",
+      "question": "Can coworkers with our corporate address get in on their own, without me adding each one?",
+      "answer": "Yes: turn on Allowed email domains under Settings > Members > Joining.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "To let people join without an invitation, turn on Allowed email domains"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r20",
+      "split": "dev",
+      "category": "paraphrase",
+      "question": "Our accountant needs copies of the bills automatically. How?",
+      "answer": "Add their address as a billing contact under Settings > Billing > Invoice details.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "add their address as a billing contact under Settings > Billing > Invoice details"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r21",
+      "split": "test",
+      "category": "paraphrase",
+      "question": "We're a German company with a tax ID. Will you add tax to our charges?",
+      "answer": "No: with a valid VAT number, the reverse-charge mechanism applies and no VAT is added.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "unless you enter a valid VAT number under Settings > Billing > Invoice details; then the reverse-charge mechanism applies and no VAT is added"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r22",
+      "split": "dev",
+      "category": "paraphrase",
+      "question": "If someone breaks into your systems and our information is exposed, how quickly will we hear about it?",
+      "answer": "Without undue delay, and within 48 hours at the latest.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "we notify the Owner without undue delay, and in any case within 48 hours"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r23",
+      "split": "test",
+      "category": "paraphrase",
+      "question": "How long after we stop paying can we still get our stuff back?",
+      "answer": "90 days: you can export or reactivate during that time.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "After the plan ends, your data is kept for 90 days."
+          }
+        ],
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "customer data is kept for 90 days so that the customer can export it or reactivate the subscription"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r24",
+      "split": "dev",
+      "category": "paraphrase",
+      "question": "Can I see who did what, and when, in our workspace?",
+      "answer": "Yes, in the audit log (Pro, Owner and Admins), under Settings > Security > Audit log.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "The audit log records security-relevant events in the organization"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r25",
+      "split": "test",
+      "category": "paraphrase",
+      "question": "Is there a cap on how often a script can call you?",
+      "answer": "Yes: per key, per rolling minute (100 on Basic, 1,000 on Pro).",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "Limits apply per API key, over a rolling window of one minute."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r26",
+      "split": "dev",
+      "category": "paraphrase",
+      "question": "Our card keeps getting declined. Will my team lose access?",
+      "answer": "After the third failed retry the organization becomes read-only: people can sign in and view, but not create or edit.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "If the third retry also fails, the organization becomes read-only"
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "members can sign in and view everything, but nobody can create or edit anything"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r27",
+      "split": "test",
+      "category": "paraphrase",
+      "question": "Can I get my money back if we change our minds a week after buying?",
+      "answer": "Yes: refunds can be requested within 30 days of purchase, through live chat.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "You can request a refund within 30 days of purchase, through live chat."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r28",
+      "split": "dev",
+      "category": "paraphrase",
+      "question": "Who else handles our information on your behalf?",
+      "answer": "Subprocessors in four categories: cloud infrastructure, email delivery, payment processing, and live chat.",
+      "evidence": [
+        [
+          {
+            "document": "data-processing-policy.md",
+            "text": "We use the following categories of subprocessors."
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "| Cloud infrastructure | Hosting the app"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "| Email delivery | Sending notifications"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "| Payment processing | Charging cards"
+          },
+          {
+            "document": "data-processing-policy.md",
+            "text": "| Live chat | Support conversations |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r29",
+      "split": "test",
+      "category": "paraphrase",
+      "question": "Do I pay extra for every person I add?",
+      "answer": "No: prices are per organization, not per member.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "Prices are per organization, not per member"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r30",
+      "split": "dev",
+      "category": "paraphrase",
+      "question": "Can we move our account from the US servers to Germany?",
+      "answer": "Not directly: the region can't be changed; create a new organization in the other region and export and import the data.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "To move to the other region, create a new organization there, export your data from the old one, and import it into the new one."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r31",
+      "split": "dev",
+      "category": "mixed",
+      "question": "Since a payment failed, our script gets 423 errors. What do we need to do?",
+      "answer": "The organization is read-only (organization_read_only); update the card, which retries the payment and makes it writable again.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| 423 | organization_read_only |"
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "Updating the card retries the overdue payment immediately, and the organization becomes writable again"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r32",
+      "split": "test",
+      "category": "mixed",
+      "question": "We get 429 even though we only retry failed requests. Why?",
+      "answer": "Requests that receive 429 still count toward the limit, so retrying immediately makes the wait longer; wait for Retry-After.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "Requests that receive 429 still count toward the limit, so retrying immediately in a loop makes the wait longer."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r33",
+      "split": "dev",
+      "category": "mixed",
+      "question": "Will page and per_page pagination still work next year?",
+      "answer": "Only until 2027-03-31: version 1, which uses them, is deprecated; move to cursor pagination.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "Version 1 was deprecated on 2026-06-01 and will stop working on 2027-03-31. Version 1 used offset pagination with page and per_page parameters"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r34",
+      "split": "test",
+      "category": "mixed",
+      "question": "Can I make a guest the assignee of a task through the API?",
+      "answer": "Yes, if they are a guest of that project: assignee takes the email of a member or a guest of the project.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Field | Type | Notes |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| assignee | string or null | The email address of a member or a guest of the project |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r35",
+      "split": "dev",
+      "category": "mixed",
+      "question": "We get 403 forbidden when we call the API from home. Could that be the office-only network setting?",
+      "answer": "Yes: 403 forbidden is also returned for requests from outside the IP allowlist.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Status | Code | Meaning |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| 403 | forbidden | The key's member isn't allowed to do this, or the request came from outside the IP allowlist |"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r36",
+      "split": "test",
+      "category": "mixed",
+      "question": "Do people created through SCIM become Admins?",
+      "answer": "No: they join with the Member role; change the role in the app.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "Members created through SCIM join with the Member role"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r37",
+      "split": "dev",
+      "category": "mixed",
+      "question": "Does Sign out all members log me out too?",
+      "answer": "No: the person who uses it stays signed in.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "use Sign out all members on the same page. The person who uses it stays signed in."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r38",
+      "split": "test",
+      "category": "mixed",
+      "question": "Will the IP allowlist block your webhook calls to our server?",
+      "answer": "No: webhook deliveries are not affected, because they go from your servers to ours.",
+      "evidence": [
+        [
+          {
+            "document": "admin-guide.md",
+            "text": "Webhook deliveries are not affected, because they go from our servers to yours."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r39",
+      "split": "dev",
+      "category": "mixed",
+      "question": "How much is Pro per year, and how does that compare with paying monthly?",
+      "answer": "$250 per year, the same as 10 months of monthly billing at $25.",
+      "evidence": [
+        [
+          {
+            "document": "billing-guide.md",
+            "text": "| Annual price | $100 | $250 |"
+          },
+          {
+            "document": "billing-guide.md",
+            "text": "An annual plan costs the same as 10 months of monthly billing."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "r40",
+      "split": "test",
+      "category": "mixed",
+      "question": "What's the longest title a task can have?",
+      "answer": "500 characters.",
+      "evidence": [
+        [
+          {
+            "document": "api-reference.md",
+            "text": "| Field | Type | Notes |"
+          },
+          {
+            "document": "api-reference.md",
+            "text": "| title | string | Required, 1 to 500 characters |"
+          }
+        ]
+      ]
+    }
+  ]
+}
