@@ -1,0 +1,13 @@
+{
+  "name": "hybrid-search",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Vector, keyword (BM25), and hybrid retrieval compared on the same chunks and token budget. Companion to Article #16 on snehalagrawal.com.",
+  "scripts": {
+    "evaluate": "node evaluate.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

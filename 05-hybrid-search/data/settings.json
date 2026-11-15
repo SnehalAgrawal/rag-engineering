@@ -1,0 +1,26 @@
+{
+  "_comment": "Every setting of the experiment, written after the questions were frozen and before any retrieval code. Chunking and budget are fixed: the structure-headings chunks from 04-chunking, and a 1,000-token retrieved-context budget (Llama 3.2 tokens; chunks in rank order, a chunk that doesn't fit the remaining budget is skipped). The fusion weight is chosen on development questions only, by the rule in 'weighted'. The hybrids use the analyzer that finds more development questions on its own (both question sets), ties going to 'words'.",
+  "chunking": {"name": "structure-headings", "kind": "structure", "max_tokens": 512, "headings": true},
+  "embedding": {
+    "document_prefix": "search_document: ",
+    "query_prefix": "search_query: ",
+    "batch_size": 32
+  },
+  "bm25": {
+    "k1": 1.2,
+    "b": 0.75,
+    "matching": "BM25 as in Lucene: idf = ln(1 + (N - df + 0.5) / (df + 0.5)); each query token counts once per occurrence. Keyword search returns only chunks that contain at least one query token, as a search engine does; vector search ranks every chunk.",
+    "analyzers": {
+      "words": "lowercase; a token is a run of letters and digits. 'SSO-104' -> 'sso', '104'. No stemming, no stop words.",
+      "identifiers": "the 'words' tokens, plus every run of letters and digits joined by - _ . / : (an identifier) as one more token. 'SSO-104' -> 'sso', '104', 'sso-104'."
+    }
+  },
+  "rrf": {"k": 60},
+  "weighted": {
+    "normalization": "per query, min-max over all chunks: (score - min) / (max - min), for cosine and for BM25 separately",
+    "alphas": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+    "rule": "alpha weights the vector score: alpha * vector + (1 - alpha) * keyword. Choose the alpha with the most development questions found at the primary budget, over both question sets; ties go to the alpha closest to 0.5."
+  },
+  "budgets": [500, 1000, 2000],
+  "primary_budget": 1000
+}

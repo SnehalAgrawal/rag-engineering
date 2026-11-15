@@ -1,6 +1,6 @@
 # rag-engineering
 
-Runnable retrieval-augmented generation (RAG) demos that accompany the AI engineering series on [snehalagrawal.com](https://snehalagrawal.com/articles/). Each demo is self-contained and runs locally: no API keys or paid services. 01, 03, and 04 run in Python and JavaScript with [Ollama](https://ollama.com); 02 fine-tunes a model, so it is Python only and needs a Mac with Apple silicon ([MLX](https://github.com/ml-explore/mlx)).
+Runnable retrieval-augmented generation (RAG) demos that accompany the AI engineering series on [snehalagrawal.com](https://snehalagrawal.com/articles/). Each demo is self-contained and runs locally: no API keys or paid services. 01, 03, 04, and 05 run in Python and JavaScript with [Ollama](https://ollama.com); 02 fine-tunes a model, so it is Python only and needs a Mac with Apple silicon ([MLX](https://github.com/ml-explore/mlx)).
 
 | Demo | Article | What it shows |
 |---|---|---|
@@ -8,6 +8,7 @@ Runnable retrieval-augmented generation (RAG) demos that accompany the AI engine
 | [02-rag-vs-fine-tuning](02-rag-vs-fine-tuning/) | [RAG vs Fine-Tuning: When Should You Use Which?](https://snehalagrawal.com/articles/rag-vs-fine-tuning-when-should-you-use-which/) | A real LoRA fine-tune against retrieval on the same model: what each one teaches, and what happens when a fact changes (Python, Apple silicon) |
 | [03-production-rag-pipeline](03-production-rag-pipeline/) | [Designing a Production-Ready RAG Pipeline](https://snehalagrawal.com/articles/designing-a-production-ready-rag-pipeline/) | The 01 assistant with a pipeline around it: a versioned, incremental index; one deadline per request; a relevance gate; fault injection; and a trace for every request |
 | [04-chunking](04-chunking/) | [Chunking Strategies for RAG: What Actually Matters?](https://snehalagrawal.com/articles/chunking-strategies-for-rag-what-actually-matters/) | Ten ways to split five long documents, compared on whether the answering passage is retrieved at equal token budgets, plus a hand-graded answer stage |
+| [05-hybrid-search](05-hybrid-search/) | [Retrieval Strategies: Vector Search, Keyword Search, and Hybrid Search](https://snehalagrawal.com/articles/retrieval-strategies-vector-keyword-and-hybrid-search/) | Vector, BM25, and two hybrids ranking the same chunks within the same budget: what each finds that the others miss |
 
 ## Linting
 
