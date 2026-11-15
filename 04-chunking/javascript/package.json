@@ -1,0 +1,15 @@
+{
+  "name": "chunking",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Chunking strategies for RAG, compared on evidence recall at equal token budgets, with a hand-graded answer stage. Companion to Article #15 on snehalagrawal.com.",
+  "scripts": {
+    "check-tokens": "node check_tokens.js",
+    "evaluate": "node evaluate.js",
+    "answer": "node answer.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

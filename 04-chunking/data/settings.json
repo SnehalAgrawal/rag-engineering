@@ -1,0 +1,29 @@
+{
+  "_comment": "Every setting of the experiment, written before the first retrieval run. Token counts are Llama 3.2 tokens (the answer model's), counted by tokens.py / tokens.js. 'budgets' are context sizes: retrieved chunks are added in rank order, a chunk that doesn't fit the remaining budget is skipped, and the next one is tried. Selection rule, fixed before the run: rank strategies by how many development questions have their evidence found at the primary budget; break ties by fewer indexed tokens. The answer stage runs the baseline plus the two best-ranked other strategies on the test questions.",
+  "embedding": {
+    "document_prefix": "search_document: ",
+    "query_prefix": "search_query: ",
+    "batch_size": 32
+  },
+  "strategies": [
+    {"name": "whole-document", "kind": "whole"},
+    {"name": "fixed-128", "kind": "fixed", "size": 128, "overlap": 0},
+    {"name": "fixed-128-overlap-32", "kind": "fixed", "size": 128, "overlap": 32},
+    {"name": "fixed-256", "kind": "fixed", "size": 256, "overlap": 0},
+    {"name": "fixed-256-overlap-64", "kind": "fixed", "size": 256, "overlap": 64},
+    {"name": "fixed-512", "kind": "fixed", "size": 512, "overlap": 0},
+    {"name": "fixed-512-overlap-128", "kind": "fixed", "size": 512, "overlap": 128},
+    {"name": "structure", "kind": "structure", "max_tokens": 512, "headings": false},
+    {"name": "structure-headings", "kind": "structure", "max_tokens": 512, "headings": true},
+    {"name": "semantic", "kind": "semantic", "buffer": 1, "percentile": 95}
+  ],
+  "budgets": [500, 1000, 2000],
+  "primary_budget": 1000,
+  "recall_k": [1, 3, 5],
+  "answer": {
+    "baseline": "fixed-256",
+    "best": 2,
+    "budget": 1000,
+    "max_output_tokens": 500
+  }
+}
